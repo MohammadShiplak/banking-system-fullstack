@@ -29,5 +29,7 @@ A full-stack **Bank Management System** that enables users to perform essential 
 - **Repository Pattern**
 - **3-tier Architecture** (Presentation, Business, Data Access layers)
 
+### 📽️ Demo Video
 
+[Click here to watch the demo](https://youtu.be/shC22PUzZJc)
 
