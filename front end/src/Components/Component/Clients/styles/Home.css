@@ -1,0 +1,85 @@
+/* Consistent with Add.css styling */
+.home-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bank-form-card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.bank-form-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  padding: 1rem;
+  font-weight: 600;
+}
+
+.bank-table {
+  margin-top: 1rem;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.bank-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  padding: 12px 15px;
+}
+
+.bank-table td {
+  padding: 12px 15px;
+  vertical-align: middle;
+}
+
+.bank-form-btn {
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bank-form-btn-submit {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.bank-form-btn-submit:hover {
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+}
+
+.bank-form-btn-cancel {
+  color: #6c757d;
+  border-color: #6c757d;
+}
+
+.bank-form-btn-cancel:hover {
+  background-color: #f8f9fa;
+}
+
+.action-buttons {
+  white-space: nowrap;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 1rem;
+  }
+  
+  .bank-table {
+    font-size: 0.9rem;
+  }
+  
+  .bank-form-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
