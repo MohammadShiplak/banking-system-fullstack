@@ -1,0 +1,15 @@
+C:\Users\user\Desktop\Bank Project\banking-system-fullstack\DataAccessLayer-BankManagementSystem\obj\Debug\net8.0\DataAccessLayer-BankManagementSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\Bank Project\banking-system-fullstack\DataAccessLayer-BankManagementSystem\obj\Debug\net8.0\DataAccessLayer-BankManagementSystem.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\Bank Project\banking-system-fullstack\DataAccessLayer-BankManagementSystem\obj\Debug\net8.0\DataAccessLayer-BankManagementSystem.AssemblyInfo.cs
+C:\Users\user\Desktop\Bank Project\banking-system-fullstack\DataAccessLayer-BankManagementSystem\obj\Debug\net8.0\DataAccessLayer-BankManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Bank Project\banking-system-fullstack\DataAccessLayer-BankManagementSystem\obj\Debug\net8.0\DataAccessLayer-BankManagementSystem.sourcelink.json
+C:\Users\user\Desktop\Bank Project\banking-system-fullstack\DataAccessLayer-BankManagementSystem\bin\Debug\net8.0\DataAccessLayer-BankManagementSystem.deps.json
+C:\Users\user\Desktop\Bank Project\banking-system-fullstack\DataAccessLayer-BankManagementSystem\bin\Debug\net8.0\DataAccessLayer-BankManagementSystem.runtimeconfig.json
+C:\Users\user\Desktop\Bank Project\banking-system-fullstack\DataAccessLayer-BankManagementSystem\bin\Debug\net8.0\DataAccessLayer-BankManagementSystem.dll
+C:\Users\user\Desktop\Bank Project\banking-system-fullstack\DataAccessLayer-BankManagementSystem\bin\Debug\net8.0\DataAccessLayer-BankManagementSystem.pdb
+C:\Users\user\Desktop\Bank Project\banking-system-fullstack\DataAccessLayer-BankManagementSystem\obj\Debug\net8.0\DataAccessLayer-BankManagementSystem.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\Bank Project\banking-system-fullstack\DataAccessLayer-BankManagementSystem\obj\Debug\net8.0\DataAccessLayer-BankManagementSystem.dll
+C:\Users\user\Desktop\Bank Project\banking-system-fullstack\DataAccessLayer-BankManagementSystem\obj\Debug\net8.0\refint\DataAccessLayer-BankManagementSystem.dll
+C:\Users\user\Desktop\Bank Project\banking-system-fullstack\DataAccessLayer-BankManagementSystem\obj\Debug\net8.0\DataAccessLayer-BankManagementSystem.pdb
+C:\Users\user\Desktop\Bank Project\banking-system-fullstack\DataAccessLayer-BankManagementSystem\obj\Debug\net8.0\DataAccessLayer-BankManagementSystem.genruntimeconfig.cache
+C:\Users\user\Desktop\Bank Project\banking-system-fullstack\DataAccessLayer-BankManagementSystem\obj\Debug\net8.0\ref\DataAccessLayer-BankManagementSystem.dll

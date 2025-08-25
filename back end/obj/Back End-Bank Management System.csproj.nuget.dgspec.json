@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\source\\repos\\Back End-Bank Management System\\Back End-Bank Management System.csproj": {}
+    "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\back end\\Back End-Bank Management System.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\source\\repos\\Back End-Bank Management System\\Back End-Bank Management System.csproj": {
+    "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\back end\\Back End-Bank Management System.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\source\\repos\\Back End-Bank Management System\\Back End-Bank Management System.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\back end\\Back End-Bank Management System.csproj",
         "projectName": "Back End-Bank Management System",
-        "projectPath": "C:\\Users\\user\\source\\repos\\Back End-Bank Management System\\Back End-Bank Management System.csproj",
+        "projectPath": "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\back end\\Back End-Bank Management System.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\source\\repos\\Back End-Bank Management System\\obj\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\back end\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -29,11 +29,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\user\\source\\repos\\BusinessLayer-BankManagementSystem\\BusinessLayer-BankManagementSystem.csproj": {
-                "projectPath": "C:\\Users\\user\\source\\repos\\BusinessLayer-BankManagementSystem\\BusinessLayer-BankManagementSystem.csproj"
-              },
-              "C:\\Users\\user\\source\\repos\\DataAccessLayer=BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj": {
-                "projectPath": "C:\\Users\\user\\source\\repos\\DataAccessLayer=BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj"
+              "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\BusinessLayer-BankManagementSystem.csproj": {
+                "projectPath": "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\BusinessLayer-BankManagementSystem.csproj"
               }
             }
           }
@@ -83,18 +80,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.412/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.413/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\user\\source\\repos\\BusinessLayer-BankManagementSystem\\BusinessLayer-BankManagementSystem.csproj": {
+    "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\BusinessLayer-BankManagementSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\source\\repos\\BusinessLayer-BankManagementSystem\\BusinessLayer-BankManagementSystem.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\BusinessLayer-BankManagementSystem.csproj",
         "projectName": "BusinessLayer-BankManagementSystem",
-        "projectPath": "C:\\Users\\user\\source\\repos\\BusinessLayer-BankManagementSystem\\BusinessLayer-BankManagementSystem.csproj",
+        "projectPath": "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\BusinessLayer-BankManagementSystem.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\source\\repos\\BusinessLayer-BankManagementSystem\\obj\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -112,8 +109,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\user\\source\\repos\\DataAccessLayer=BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj": {
-                "projectPath": "C:\\Users\\user\\source\\repos\\DataAccessLayer=BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj"
+              "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj": {
+                "projectPath": "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj"
               }
             }
           }
@@ -148,18 +145,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.412/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.413/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\user\\source\\repos\\DataAccessLayer=BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj": {
+    "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\source\\repos\\DataAccessLayer=BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj",
         "projectName": "DataAccessLayer-BankManagementSystem",
-        "projectPath": "C:\\Users\\user\\source\\repos\\DataAccessLayer=BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj",
+        "projectPath": "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\source\\repos\\DataAccessLayer=BankManagementSystem\\obj\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -196,35 +193,23 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[9.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[9.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[9.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.4, )"
-            },
-            "Microsoft.Extensions.Configuration": {
-              "target": "Package",
-              "version": "[9.0.4, )"
-            },
-            "Microsoft.Extensions.Configuration.Json": {
-              "target": "Package",
-              "version": "[9.0.4, )"
-            },
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[13.0.3, )"
+              "version": "[9.0.8, )"
             }
           },
           "imports": [
@@ -243,7 +228,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.412/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.413/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

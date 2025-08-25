@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -26,9 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-	  <ProjectReference Include="..\BusinessLayer-BankManagementSystem\BusinessLayer-BankManagementSystem.csproj" />
-	  <ProjectReference Include="..\DataAccessLayer=BankManagementSystem\DataAccessLayer-BankManagementSystem.csproj" />
-	  <!-- Fixed line below -->
+    <ProjectReference Include="..\BusinessLayer-BankManagementSystem\BusinessLayer-BankManagementSystem.csproj" />
   </ItemGroup>
 
 </Project>
