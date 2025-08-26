@@ -31,5 +31,5 @@ A full-stack **Bank Management System** that enables users to perform essential 
 
 ### 📽️ Demo Video
 
-[Click here to watch the demo](https://youtu.be/shC22PUzZJc)
+[Click here to watch the demo](https://youtu.be/guJff7Y3QII)
 
