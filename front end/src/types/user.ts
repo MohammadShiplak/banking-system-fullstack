@@ -1,37 +1,15 @@
+export interface User {
+  id: number;
 
-export interface User
-{
+  UserName: string;
 
-  id :number;
+  Email: string;
 
-   UserName :string;
+  Password: string;
 
-   Email :string;
-
-   Password :string;
-
+  token: string;
 }
 
-
-export interface Counts 
-{
-
-
-userCount : number|null
-
-
+export interface Counts {
+  userCount: number | null;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
