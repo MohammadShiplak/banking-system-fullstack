@@ -77,26 +77,7 @@ namespace Back_End_Bank_Management_System.Controllers
             return Ok(users);
         }
 
-        [HttpPost("login")]
-        public async Task <IActionResult>Login([FromBody] LoginRequest request)
-        {
-
-            var user = await _userRepository.FindUsersbyUserNameAndPasswordAsync(request.Username, request.Password);
-
-            if (user == null)
-            {
-                return Unauthorized(new { message = "Username or password is incorrect" });
-            }
-
-            return Ok(new
-            {
-user.UserName,
-user.Password
-
-            });
-
-
-        }
+     
         [HttpGet("GetUserCounts")]
         public async Task <IActionResult>GetUserCounts()
         {

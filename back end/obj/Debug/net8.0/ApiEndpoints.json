@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "Back_End_Bank_Management_System.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "DataAccessLayer_BankManagementSystem.DTO.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Back_End_Bank_Management_System.Controllers.ClientController",
     "Method": "Get",
     "RelativePath": "api/Client",
@@ -168,6 +184,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Back_End_Bank_Management_System.Controllers.GeneraterHash",
+    "Method": "GenerateHashes",
+    "RelativePath": "api/GeneraterHash/generate-hashes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Back_End_Bank_Management_System.Controllers.UserController",
     "Method": "Get",
     "RelativePath": "api/User",
@@ -249,22 +275,6 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Back_End_Bank_Management_System.Controllers.UserController",
-    "Method": "Login",
-    "RelativePath": "api/User/login",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "DataAccessLayer_BankManagementSystem.DTO.LoginRequest",
-        "IsRequired": true
-      }
-    ],
     "ReturnTypes": []
   }
 ]
