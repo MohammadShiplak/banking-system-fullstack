@@ -1,10 +1,9 @@
-
-import axios from "axios";
-import { User,Counts } from "../types/user";
+import { User, Counts } from "../types/user";
+import axiosInstance from "./axiosInstance";
 
 export const fetchUser = async () => {
   try {
-    const response = await axios.get("/api/User");
+    const response = await axiosInstance.get("/api/User");
     return response.data;
   } catch (error) {
     console.error("Error fetching users:", error);
@@ -14,7 +13,7 @@ export const fetchUser = async () => {
 
 export const fetchUserCount = async () => {
   try {
-    const response = await axios.get("/api/User/GetUserCounts");
+    const response = await axiosInstance.get("/api/User/GetUserCounts");
     return response.data;
   } catch (error) {
     console.error("Error fetching users:", error);
@@ -22,117 +21,66 @@ export const fetchUserCount = async () => {
   }
 };
 
-
-
-
-
-
-
-
-
-
-export const AddUser=async  (user:User)=>{
-
-try
-{
-
-const response =await axios.post(`/api/User`,user);
-
-return response.data;
-}
-catch (error)
-{
-  console.log("Error Adding user ",error)
-    throw error
-}
-
-}
-export const UpdateUser=async  (user:User)=>{
-
-try
-{
-
-const response =await axios.put(`/api/User`,user);
-
-return response.data;
-}
-catch (error)
-{
-  console.log("Error update user",error)
-    throw error
-}
-
-}
-
-export const DeleteUser=async  (Id:number)=>{
-
-try
-{
-const response =await axios.delete(`/api/User/${Id}`)
-
-return response.data
-
-}
-catch (error)
-{
-  console.log("Error deleting user",error)
-    throw error
-}
-
-}
-
-export const GetUserbyId =async(Id:number)=>{
-
-try{
-
-const response =await axios.get(`/api/User/${Id}`)
-
-return response.data
-
-
-}
-catch(error)
-{
-    console.log("Error ",error)
-    throw error
-}
-
-
-}
-
-
-export const Login = async (
-  userName:string,
-  Password: string,
-  
-) => {
+export const AddUser = async (user: User) => {
   try {
-    const response = await axios.post(`/api/User/login`, {
-     Username: userName,
-      Password:Password,
-   
-    }, {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-    
+    const response = await axiosInstance.post(`/api/User`, user);
+
     return response.data;
+  } catch (error) {
+    console.error("Error Adding user ", error);
+    throw error;
+  }
+};
+export const UpdateUser = async (user: User) => {
+  try {
+    const response = await axiosInstance.put(`/api/User`, user);
+
+    return response.data;
+  } catch (error) {
+    console.error("Error update user", error);
+    throw error;
+  }
+};
+
+export const DeleteUser = async (Id: number) => {
+  try {
+    const response = await axiosInstance.delete(`/api/User/${Id}`);
+
+    return response.data;
+  } catch (error) {
+    console.error("Error deleting user", error);
+    throw error;
+  }
+};
+
+export const GetUserbyId = async (Id: number) => {
+  try {
+    const response = await axiosInstance.get(`/api/User/${Id}`);
+
+    return response.data;
+  } catch (error) {
+    console.error("Error ", error);
+    throw error;
+  }
+};
+
+export const Login = async (email: string, password: string) => {
+  try {
+    const response = await axiosInstance.post(`/api/Auth/login`, {
+      Email: email,
+      Password: password,
+    });
+
+    const token = response.data.token;
+
+    if (token) {
+      localStorage.setItem("authToken", token);
+      console.log("✅ Token saved");
+    }
+
+    return response.data; // Return the token directly
   } catch (error) {
     console.error("Transfer failed:", error);
     throw error; // Let the thunk handle the rejection
   }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
+};

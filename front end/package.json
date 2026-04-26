@@ -2,7 +2,7 @@
   "name": "front-end",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5106",
+  "proxy": "http://localhost:7259/",
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
     "@tanstack/react-query": "^5.77.0",
@@ -21,6 +21,8 @@
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
     "react-redux": "^9.2.0",
+    "react-router": "^6.30.3",
+    "react-router-dom": "^6.30.3",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
@@ -48,8 +50,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "react-router-dom": "^7.6.0"
   }
 }
