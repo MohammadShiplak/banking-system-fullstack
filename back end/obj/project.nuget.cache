@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MsG/lITdiO4=",
+  "dgSpecHash": "aNgZCB/H2iw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\Bank Full stack\\banking-system-fullstack\\back end\\Back End-Bank Management System.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\back end\\Back End-Bank Management System.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
