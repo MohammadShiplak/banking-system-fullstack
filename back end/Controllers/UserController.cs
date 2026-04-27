@@ -4,6 +4,7 @@ using DataAccessLayer_BankManagementSystem.Data;
 using DataAccessLayer_BankManagementSystem.DTO;
 using DataAccessLayer_BankManagementSystem.Entities;
 using DataAccessLayer_BankManagementSystem.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +14,10 @@ namespace Back_End_Bank_Management_System.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
+    [Authorize(Roles = "Admin")]
+    // The ENTIRE users controller is Admin only
+    // Tellers and Clients cannot manage system users
     public class UserController : ControllerBase
     {
 

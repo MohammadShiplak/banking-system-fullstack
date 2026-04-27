@@ -3,6 +3,7 @@ using DataAccessLayer_BankManagementSystem.Data;
 using DataAccessLayer_BankManagementSystem.DTO;
 using DataAccessLayer_BankManagementSystem.Entities;
 using DataAccessLayer_BankManagementSystem.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,11 @@ namespace Back_End_Bank_Management_System.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
+
+    // [Authorize] on the class = ALL endpoints require login
+    // No one can access anything here without a valid JWT token
+
     public class ClientController : ControllerBase
     {
         readonly IClientRepository<Client> _clientRepository;
@@ -25,7 +31,10 @@ namespace Back_End_Bank_Management_System.Controllers
 
 
         [HttpGet]
+        [Authorize(Roles ="Admin,Teller")]
 
+        // Only Admin and Teller can see ALL clients
+        // Client cannot see other clients — only their own account
         public async Task < IActionResult> Get()
         {
             var clients =await  _clientRepository.GetAllClientsAsync();
@@ -34,6 +43,7 @@ namespace Back_End_Bank_Management_System.Controllers
         }
 
         [HttpGet("GetAllClientCount")]
+        [Authorize(Roles ="Admin,Teller")]
         public async Task<IActionResult> GetAllClientCount()
         {
 
@@ -61,6 +71,7 @@ namespace Back_End_Bank_Management_System.Controllers
         }
 
         [HttpPost("{accountNumber}/deposit")]
+        [Authorize(Roles = "Admin,Teller,Client")]
         public async Task<IActionResult> Deposit(string accountNumber, [FromBody] DepositRequest request)
         {
             try
@@ -79,6 +90,7 @@ namespace Back_End_Bank_Management_System.Controllers
         }
 
         [HttpPost("{accountNumber}/withdrew")]
+        [Authorize(Roles = "Admin,Teller,Client")]
         public async Task<IActionResult> Withdrew(string accountNumber, [FromBody] DepositRequest request)
         {
             try
@@ -97,7 +109,7 @@ namespace Back_End_Bank_Management_System.Controllers
         }
 
         [HttpPost("Transfer")]
-
+        [Authorize(Roles = "Admin,Teller,Client")]
         public async Task<IActionResult> Transfer([FromBody] TransferRequest request)
         {
             try
@@ -134,7 +146,8 @@ namespace Back_End_Bank_Management_System.Controllers
         }
 
         [HttpGet("GetTotallAccountBalance")]
-public async Task<IActionResult> GetTotallAccountBalance()
+        [Authorize(Roles = "Admin,Teller")]
+        public async Task<IActionResult> GetTotallAccountBalance()
 {
   
     var totalBalance = await _context.Clients.SumAsync(a => a.AccountBalance);
@@ -150,6 +163,7 @@ public async Task<IActionResult> GetTotallAccountBalance()
 
 
         [HttpGet("{Id}")]
+        [Authorize(Roles = "Admin,Teller,Client")]
         public async Task <IActionResult> Get(int Id)
         {
             var client = await _clientRepository.GetByClientsinfoByIdAsync(Id);
@@ -158,6 +172,7 @@ public async Task<IActionResult> GetTotallAccountBalance()
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles ="Admin")]
         public async Task <IActionResult> Delete(int id)
         {
 
@@ -175,6 +190,7 @@ public async Task<IActionResult> GetTotallAccountBalance()
         }
 
         [HttpPut]
+        [Authorize(Roles = "Admin,Teller")]
         public async Task <IActionResult> Update(Client client)
         {
 
@@ -185,6 +201,7 @@ public async Task<IActionResult> GetTotallAccountBalance()
 
         }
         [HttpPost]
+        [Authorize(Roles = "Admin,Teller")]
         public async Task<IActionResult> Add(Client client)
         {
 
