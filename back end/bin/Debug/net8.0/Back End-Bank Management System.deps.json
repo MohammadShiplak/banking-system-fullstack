@@ -1085,11 +1085,7 @@
       },
       "BusinessLayer-BankManagementSystem/1.0.0": {
         "dependencies": {
-          "BCrypt.Net-Next": "4.1.0",
-          "DataAccessLayer-BankManagementSystem": "1.0.0",
-          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
-          "Microsoft.IdentityModel.Tokens": "8.17.0",
-          "System.IdentityModel.Tokens.Jwt": "8.17.0"
+          "DataAccessLayer-BankManagementSystem": "1.0.0"
         },
         "runtime": {
           "BusinessLayer-BankManagementSystem.dll": {
@@ -1100,12 +1096,8 @@
       },
       "DataAccessLayer-BankManagementSystem/1.0.0": {
         "dependencies": {
-          "BCrypt.Net-Next": "4.1.0",
-          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.8",
-          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.8",
-          "Microsoft.IdentityModel.Tokens": "8.17.0",
-          "System.IdentityModel.Tokens.Jwt": "8.17.0"
+          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.8"
         },
         "runtime": {
           "DataAccessLayer-BankManagementSystem.dll": {
