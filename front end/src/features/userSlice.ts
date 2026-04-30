@@ -1,6 +1,6 @@
 import { use } from "react";
 import {
-  AddUser,
+  AddUserApi,
   UpdateUser,
   DeleteUser,
   fetchUser,
@@ -11,25 +11,13 @@ import {
 import { User } from "../types/user";
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
+import { AuthState } from "../types/auth";
+import { decodeToken } from "../utils/tokenHelper";
 export const fetchUsers = createAsyncThunk("Users/fetchUsers", async () => {
   const response = await fetchUser();
 
   return response;
 });
-
-/*
-export const fetchUserCounts = createAsyncThunk<UserCounts, void, { rejectValue: string }>(
-  'user/fetchUserCounts',
-  async (_, { rejectWithValue }) => {
-    try {
-      const response = await fetchUser();
-      return response.data;
-    } catch (error) {
-    //  return rejectWithValue(error.response?.data?.message || 'Failed to fetch user counts');
-    }
-  }
-);
-*/
 
 export const fetchUserCounts = createAsyncThunk<UserCounts, void>(
   "user/fetchCounts",
@@ -39,11 +27,11 @@ export const fetchUserCounts = createAsyncThunk<UserCounts, void>(
   },
 );
 
-export const AddUsers = createAsyncThunk(
+export const Adduser = createAsyncThunk(
   "Users/AddUsers",
   async (user: User, { rejectWithValue }) => {
     try {
-      const response = await AddUser(user);
+      const response = await AddUserApi(user);
 
       return response;
     } catch (error: any) {
@@ -54,7 +42,7 @@ export const AddUsers = createAsyncThunk(
 
 export const UpdateUsers = createAsyncThunk(
   "Users/UpdateUsers",
-  async (user: User, { rejectWithValue }) => {
+  async (user: any, { rejectWithValue }) => {
     try {
       const response = await UpdateUser(user);
 
@@ -125,6 +113,10 @@ interface UserCounts {
 interface UserState {
   token: string | null;
 
+  role: string | null;
+
+  email: string | null;
+
   isAuthenticated: boolean;
 
   status: "idle" | "pending" | "succeeded" | "failed";
@@ -133,10 +125,23 @@ interface UserState {
 
   userCounts: UserCounts | null;
 }
+// ─────────────────────────────────────────
+// INITIAL STATE — read from localStorage on page load
+// ─────────────────────────────────────────
 
+// When the page loads, check if a token already exists in localStorage
+// If yes, decode it immediately to get the role back
+
+const savedToken = localStorage.getItem("authToken");
+// If there's a saved token, decode it to get the role
+// Otherwise role is null (user is not logged in)
+
+const savedRole = savedToken ? (decodeToken(savedToken)?.role ?? null) : null;
+const savedEmail = savedToken ? (decodeToken(savedToken)?.email ?? null) : null;
 const initialState: UserState = {
-  token: localStorage.getItem("authToken"),
-
+  token: savedToken,
+  role: savedRole,
+  email: savedEmail,
   isAuthenticated: !!localStorage.getItem("authToken"),
   items: [],
 
@@ -150,7 +155,18 @@ const UserSliceReducer = createSlice({
 
   initialState,
 
-  reducers: {},
+  reducers: {
+    // ← NEW: Logout action — clears everything
+    //
+
+    logout(state) {
+      state.token = null;
+      state.role = null;
+      state.email = null;
+      state.isAuthenticated = false;
+      localStorage.removeItem("authToken");
+    },
+  },
 
   extraReducers: (builder) => {
     builder
@@ -164,13 +180,13 @@ const UserSliceReducer = createSlice({
       .addCase(fetchUsers.rejected, (state) => {
         state.status = "failed";
       })
-      .addCase(AddUsers.pending, (state) => {
+      .addCase(Adduser.pending, (state) => {
         state.status = "pending";
       })
-      .addCase(AddUsers.rejected, (state) => {
+      .addCase(Adduser.rejected, (state) => {
         state.status = "failed";
       })
-      .addCase(AddUsers.fulfilled, (state, action) => {
+      .addCase(Adduser.fulfilled, (state, action) => {
         state.status = "succeeded";
         state.items.push(action.payload);
       })
@@ -215,7 +231,23 @@ const UserSliceReducer = createSlice({
       })
       .addCase(LoginPage.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.token = action.payload.token;
+
+        const token = action.payload.token;
+        // Save token to localStorage so it survives page refresh
+
+        localStorage.setItem("authToken", token);
+
+        //Save the raw token string in Redux
+        state.token = token;
+
+        // ← NEW: Decode the token to extract the role
+        const decoded = decodeToken(token);
+        // ← NEW: Save role to Redux state
+        // decoded.role will be "Admin", "Teller", or "Client"
+        console.log("🔍 Decoded token:", decoded);
+        state.role = decoded?.role ?? null;
+        // ← NEW: Save email to Redux state
+        state.email = decoded?.email ?? null;
         state.isAuthenticated = true;
       })
       .addCase(fetchUserCounts.pending, (state) => {
@@ -230,5 +262,6 @@ const UserSliceReducer = createSlice({
       });
   },
 });
-
+// Export the logout action so components can use it
+export const { logout } = UserSliceReducer.actions;
 export default UserSliceReducer.reducer;

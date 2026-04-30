@@ -7,46 +7,36 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { User } from "../../../types/user";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../../store";
 import axios from "axios";
 import { fetchUsers, UpdateUsers } from "../../../features/userSlice";
 import { useToast } from "../contexts/ToastContext";
+import axiosInstance from "../../../API/axiosInstance";
 //import "./styles/Add.css";
 export default function EditUser() {
   const { showToast } = useToast();
-  const [user, setUser] = useState<User>({
-    id: 0,
-    UserName: "",
-    Email: "",
-    Password: "",
-    token: "",
-  });
+  const navigate = useNavigate();
+  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [loading, setLoading] = useState(true);
 
   const { Id } = useParams<{ Id: string }>();
 
   const dispatch = useAppDispatch();
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { id, value } = e.target;
-    setUser((prev) => ({
-      ...prev,
-      [id.replace("form", "")]: value,
-    }));
-  };
-
   useEffect(() => {
     const fetchUsersbyId = async () => {
       try {
-        const response = await axios.get(`/api/User/${Id}`);
-        console.log(response.data);
-        setUser({
-          id: response.data.id,
-          UserName: response.data.userName,
-          Email: response.data.email,
-          Password: response.data.password,
-          token: response.data.token,
-        });
+        const response = await axiosInstance.get(`/api/User/${Id}`);
+
+        setLoading(true);
+
+        setUserName(response.data.userName);
+        setEmail(response.data.email);
+        setPassword(response.data.passwordHash);
       } catch (ex) {
         console.error(ex);
       }
@@ -60,20 +50,25 @@ export default function EditUser() {
   const handleUpdateUser = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    if (!userName.trim() || !email.trim() || !password.trim()) {
+      showToast("All fields are required", "danger");
+      return;
+    }
+
+    const userToSend = {
+      id: Number(Id),
+      userName: userName,
+      email: email,
+      PasswordHash: password,
+      Role: "User", // Default role, adjust as needed
+    };
+
     try {
-      const updatedUser = await dispatch(UpdateUsers(user)).unwrap();
+      const updatedUser = await dispatch(UpdateUsers(userToSend)).unwrap();
 
-      if (updatedUser) {
-        setUser({
-          id: 0,
-          UserName: "",
-          Email: "",
-          Password: "",
-          token: "",
-        });
+      showToast("User Updated Successfully :-)", "info");
 
-        showToast("User Updated Successfully :-)", "info");
-      }
+      navigate("/ListUsers");
     } catch (error) {
       showToast(`${error}`, "danger");
     }
@@ -97,8 +92,8 @@ export default function EditUser() {
                 type="text"
                 placeholder="Enter username"
                 className="bank-form-input"
-                value={user.UserName}
-                onChange={handleInputChange}
+                value={userName}
+                onChange={(e) => setUserName(e.target.value)}
               />
             </Form.Group>
 
@@ -108,8 +103,8 @@ export default function EditUser() {
                 type="text"
                 placeholder="Enter Email "
                 className="bank-form-input"
-                value={user.Email}
-                onChange={handleInputChange}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </Form.Group>
 
@@ -119,8 +114,8 @@ export default function EditUser() {
                 type="password"
                 placeholder="Enter Password "
                 className="bank-form-input"
-                value={user.Password}
-                onChange={handleInputChange}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
 

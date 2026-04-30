@@ -1,35 +1,11 @@
+export interface Client {
+  Id: number;
 
-export interface Client
-{
+  ClientName: string;
 
-id:number;
+  AccountNumber: string;
 
-ClientName:string;
+  AccountBalance: number;
 
-AccountNumber:string;
-
-AccountBalance:number;
-
-Phone:string
-
-
+  Phone: string;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

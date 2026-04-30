@@ -16,11 +16,21 @@ import ListUsers from "../Component/Users/ListUsers";
 import TransactionForm from "../Component/Transactions/Transaction";
 import BankDashboard from "../Component/Dashbord/Dashbord";
 import LoginForm from "../Component/Login/Login";
+import { useAppDispatch, useAppSelector } from "../../store";
+import { logout } from "../../features/userSlice";
 
 const Main = () => {
+  const { role, email, isAuthenticated } = useAppSelector(
+    (state) => state.users,
+  );
+
+  const dispatch = useAppDispatch();
+
+  const navigate = useNavigate();
+
   const [showSidebar, setShowSidebar] = useState(false);
   const [activePage, setActivePage] = useState("dashboard");
-  const navigate = useNavigate();
+
   const handleCloseSidebar = () => setShowSidebar(false);
   const handleShowSidebar = () => setShowSidebar(true);
 
@@ -44,7 +54,7 @@ const Main = () => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("authToken");
+    dispatch(logout());
     navigate("/login");
   };
 
@@ -148,6 +158,18 @@ const Main = () => {
           <Col>
             <div className="bank-content-container">{renderPage()}</div>
           </Col>
+          <nav>
+            {isAuthenticated && (
+              <>
+                {/* Show who is logged in and their role */}
+                <span>
+                  Welcome, {email} ({role})
+                </span>
+
+                <button onClick={handleLogout}>Logout</button>
+              </>
+            )}
+          </nav>
         </Row>
       </Container>
     </div>

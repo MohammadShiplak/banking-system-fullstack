@@ -21,7 +21,7 @@ export const fetchUserCount = async () => {
   }
 };
 
-export const AddUser = async (user: User) => {
+export const AddUserApi = async (user: User) => {
   try {
     const response = await axiosInstance.post(`/api/User`, user);
 
@@ -31,7 +31,7 @@ export const AddUser = async (user: User) => {
     throw error;
   }
 };
-export const UpdateUser = async (user: User) => {
+export const UpdateUser = async (user: any) => {
   try {
     const response = await axiosInstance.put(`/api/User`, user);
 

@@ -4,12 +4,13 @@ import Add from "./Components/Component/Clients/Add";
 import Edit from "./Components/Component/Clients/Edit";
 import LoginForm from "./Components/Component/Login/Login";
 import Main from "./Components/Main/Main";
-import AddUser from "./Components/Component/Users/AddUser";
 import ListUsers from "./Components/Component/Users/ListUsers";
 import ListClients from "./Components/Component/Clients/ListClients";
 import EditUser from "./Components/Component/Users/EditUser";
 import { ToastProvider } from "./Components/Component/contexts/ToastContext";
-
+import Forbidden from "./Components/Component/pages/Forbidden";
+import ProtectedRoute from "./Components/ProtectedRoute";
+import InertUsers from "./Components/Component/Users/InertUsers";
 function App() {
   return (
     <BrowserRouter
@@ -21,18 +22,34 @@ function App() {
       <ToastProvider>
         <div className="App">
           <Routes>
-            <Route path="/" element={<LoginForm />} />
             <Route path="/login" element={<LoginForm />} />
+            <Route path="/Forbidden" element={<Forbidden />} />
             <Route path="/Main" element={<Main />} />
 
             <Route path="/Add" element={<Add />} />
             <Route path="/Edit/:Id" element={<Edit />} />
-            <Route path="/AddUser" element={<AddUser />} />
-            <Route path="/ListUsers" element={<ListUsers />} />
-            <Route path="/ListClients" element={<ListClients />} />
+            <Route path="/AddUser" element={<InertUsers />} />
+
+            <Route
+              path="/ListUsers"
+              element={
+                <ProtectedRoute requiredRole="Admin">
+                  <ListUsers />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/ListClients"
+              element={
+                <ProtectedRoute>
+                  <ListClients />
+                </ProtectedRoute>
+              }
+            />
+
             <Route path="/EditUser/:Id" element={<EditUser />} />
 
-            {/* Catch-all redirect */}
             <Route path="*" element={<Navigate to="/login" replace />} />
           </Routes>
         </div>

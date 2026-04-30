@@ -37,7 +37,7 @@ export const deleteClients = async (id: number) => {
 
 export const GetClientsbyId = async (Id: number) => {
   try {
-    const response = await axiosInstance.post(`/api/Client/${Id}`);
+    const response = await axiosInstance.get(`/api/Client/${Id}`);
 
     return response.data;
   } catch (error) {

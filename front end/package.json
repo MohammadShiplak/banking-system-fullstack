@@ -16,6 +16,9 @@
     "@types/react-dom": "^19.1.5",
     "axios": "^1.9.0",
     "bootstrap": "^5.3.6",
+    "define-lazy-prop": "^2.0.0",
+    "dotenv-expand": "^13.0.0",
+    "jwt-decode": "^4.0.0",
     "react": "^19.1.0",
     "react-bootstrap": "^2.10.10",
     "react-dom": "^19.1.0",
@@ -50,5 +53,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "open": "8.4.2"
   }
 }

@@ -14,7 +14,7 @@ import { useToast } from "../contexts/ToastContext";
 import { useNavigate } from "react-router-dom";
 export default function Add() {
   const [client, setClient] = useState<Client>({
-    id: 0,
+    Id: 0,
     ClientName: "",
     AccountNumber: "",
     AccountBalance: 0,
@@ -31,7 +31,7 @@ export default function Add() {
 
       // Reset form
       setClient({
-        id: 0,
+        Id: 0,
         ClientName: "",
         AccountNumber: "",
         AccountBalance: 0,
