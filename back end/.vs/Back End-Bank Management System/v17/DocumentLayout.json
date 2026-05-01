@@ -1,68 +1,88 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\back end\\",
+  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\back end\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|c:\\users\\user\\desktop\\new folder (3)\\banking-system-fullstack\\back end\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|solutionrelative:controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B4F63A13-3528-4661-96F4-5DCFB941EDE7}|..\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj|c:\\users\\user\\desktop\\new folder (3)\\banking-system-fullstack\\dataaccesslayer-bankmanagementsystem\\data\\config\\userconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B4F63A13-3528-4661-96F4-5DCFB941EDE7}|..\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj|c:\\users\\user\\desktop\\new folder (3)\\banking-system-fullstack\\dataaccesslayer-bankmanagementsystem\\migrations\\20260427024923_insert-data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B4F63A13-3528-4661-96F4-5DCFB941EDE7}|..\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj|c:\\users\\user\\desktop\\new folder (3)\\banking-system-fullstack\\dataaccesslayer-bankmanagementsystem\\migrations\\20260427154136_update-password.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2174E38-BDBF-492E-B318-65A510F3A115}|..\\BusinessLayer-BankManagementSystem\\BusinessLayer-BankManagementSystem.csproj|c:\\users\\user\\desktop\\new folder (3)\\banking-system-fullstack\\businesslayer-bankmanagementsystem\\interfaces\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|c:\\users\\user\\desktop\\new folder (3)\\banking-system-fullstack\\back end\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|c:\\users\\user\\desktop\\my bank system\\banking-system-fullstack\\back end\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4F63A13-3528-4661-96F4-5DCFB941EDE7}|..\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj|c:\\users\\user\\desktop\\new folder (3)\\banking-system-fullstack\\dataaccesslayer-bankmanagementsystem\\entities\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260501005252_Implement-RefreshToken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4F63A13-3528-4661-96F4-5DCFB941EDE7}|..\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj|c:\\users\\user\\desktop\\new folder (3)\\banking-system-fullstack\\dataaccesslayer-bankmanagementsystem\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4F63A13-3528-4661-96F4-5DCFB941EDE7}|..\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj|c:\\users\\user\\desktop\\my bank system\\banking-system-fullstack\\dataaccesslayer-bankmanagementsystem\\data\\config\\userconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F63A13-3528-4661-96F4-5DCFB941EDE7}|..\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj|c:\\users\\user\\desktop\\my bank system\\banking-system-fullstack\\dataaccesslayer-bankmanagementsystem\\entities\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2174E38-BDBF-492E-B318-65A510F3A115}|..\\BusinessLayer-BankManagementSystem\\BusinessLayer-BankManagementSystem.csproj|c:\\users\\user\\desktop\\my bank system\\banking-system-fullstack\\businesslayer-bankmanagementsystem\\interfaces\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F63A13-3528-4661-96F4-5DCFB941EDE7}|..\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj|c:\\users\\user\\desktop\\my bank system\\banking-system-fullstack\\dataaccesslayer-bankmanagementsystem\\dto\\auth\\tokenresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F63A13-3528-4661-96F4-5DCFB941EDE7}|..\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj|c:\\users\\user\\desktop\\my bank system\\banking-system-fullstack\\dataaccesslayer-bankmanagementsystem\\dto\\auth\\refreshrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F63A13-3528-4661-96F4-5DCFB941EDE7}|..\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj|c:\\users\\user\\desktop\\my bank system\\banking-system-fullstack\\dataaccesslayer-bankmanagementsystem\\dto\\auth\\logoutrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F63A13-3528-4661-96F4-5DCFB941EDE7}|..\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj|c:\\users\\user\\desktop\\my bank system\\banking-system-fullstack\\dataaccesslayer-bankmanagementsystem\\dto\\auth\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F63A13-3528-4661-96F4-5DCFB941EDE7}|..\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj|c:\\users\\user\\desktop\\my bank system\\banking-system-fullstack\\dataaccesslayer-bankmanagementsystem\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|c:\\users\\user\\desktop\\my bank system\\banking-system-fullstack\\back end\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F63A13-3528-4661-96F4-5DCFB941EDE7}|..\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj|c:\\users\\user\\desktop\\my bank system\\banking-system-fullstack\\dataaccesslayer-bankmanagementsystem\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|c:\\users\\user\\desktop\\my bank system\\banking-system-fullstack\\back end\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|solutionrelative:controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|c:\\users\\user\\desktop\\my bank system\\banking-system-fullstack\\back end\\authorization\\studentowneroradminhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|solutionrelative:authorization\\studentowneroradminhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|c:\\users\\user\\desktop\\my bank system\\banking-system-fullstack\\back end\\authorization\\studentowneroradminrequirement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|solutionrelative:authorization\\studentowneroradminrequirement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|c:\\users\\user\\desktop\\my bank system\\banking-system-fullstack\\back end\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F63A13-3528-4661-96F4-5DCFB941EDE7}|..\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj|c:\\users\\user\\desktop\\my bank system\\banking-system-fullstack\\dataaccesslayer-bankmanagementsystem\\entities\\clients.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Data\\Config\\UserConfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260427021431_Add-roles-authorization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|c:\\users\\user\\desktop\\new folder (3)\\banking-system-fullstack\\back end\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B4F63A13-3528-4661-96F4-5DCFB941EDE7}|..\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj|c:\\users\\user\\desktop\\new folder (3)\\banking-system-fullstack\\dataaccesslayer-bankmanagementsystem\\entities\\clients.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2174E38-BDBF-492E-B318-65A510F3A115}|..\\BusinessLayer-BankManagementSystem\\BusinessLayer-BankManagementSystem.csproj|c:\\users\\user\\desktop\\new folder (3)\\banking-system-fullstack\\businesslayer-bankmanagementsystem\\interfaces\\repositories\\clientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|c:\\users\\user\\desktop\\new folder (3)\\banking-system-fullstack\\back end\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|c:\\users\\user\\desktop\\new folder (3)\\banking-system-fullstack\\back end\\controllers\\generaterhash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|c:\\users\\user\\desktop\\my bank system\\banking-system-fullstack\\back end\\controllers\\generaterhash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|solutionrelative:controllers\\generaterhash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|c:\\users\\user\\desktop\\new folder (3)\\banking-system-fullstack\\back end\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|c:\\users\\user\\desktop\\my bank system\\banking-system-fullstack\\back end\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|c:\\users\\user\\desktop\\new folder (3)\\banking-system-fullstack\\back end\\back end-bank management system.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "AbsoluteMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|c:\\users\\user\\desktop\\my bank system\\banking-system-fullstack\\back end\\back end-bank management system.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
       "RelativeMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|solutionrelative:back end-bank management system.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|c:\\users\\user\\desktop\\new folder (3)\\banking-system-fullstack\\back end\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|c:\\users\\user\\desktop\\my bank system\\banking-system-fullstack\\back end\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|c:\\users\\user\\desktop\\new folder (3)\\banking-system-fullstack\\back end\\back end-bank management system.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|c:\\users\\user\\desktop\\my bank system\\banking-system-fullstack\\back end\\back end-bank management system.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|solutionrelative:back end-bank management system.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
@@ -172,6 +192,27 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\Bank Full stack\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Interfaces\\IUserRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260427024923_Insert-data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260427154136_update-password.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\UserRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Entities\\Users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Data\\ApplicationDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Entities\\Clients.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\ClientRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -209,88 +250,262 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "20260427024923_Insert-data.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260427024923_Insert-data.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer-BankManagementSystem\\Migrations\\20260427024923_Insert-data.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260427024923_Insert-data.cs",
-              "RelativeToolTip": "..\\DataAccessLayer-BankManagementSystem\\Migrations\\20260427024923_Insert-data.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAiAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "20260501005252_Implement-RefreshToken.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260501005252_Implement-RefreshToken.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer-BankManagementSystem\\Migrations\\20260501005252_Implement-RefreshToken.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260501005252_Implement-RefreshToken.cs",
+              "RelativeToolTip": "..\\DataAccessLayer-BankManagementSystem\\Migrations\\20260501005252_Implement-RefreshToken.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-27T15:54:01.575Z",
+              "WhenOpened": "2026-05-01T00:52:52.476Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "20260427154136_update-password.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260427154136_update-password.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer-BankManagementSystem\\Migrations\\20260427154136_update-password.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260427154136_update-password.cs",
-              "RelativeToolTip": "..\\DataAccessLayer-BankManagementSystem\\Migrations\\20260427154136_update-password.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBYAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer-BankManagementSystem\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "..\\DataAccessLayer-BankManagementSystem\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-27T15:41:36.841Z",
+              "WhenOpened": "2026-04-30T23:49:15.01Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ClientController.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\back end\\Controllers\\ClientController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ClientController.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\back end\\Controllers\\ClientController.cs",
-              "RelativeToolTip": "Controllers\\ClientController.cs",
-              "ViewState": "AgIAALkAAAAAAAAAAAAUwJQAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-08T00:10:08.67Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\back end\\Controllers\\AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\back end\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\back end\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\back end\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAAwCYAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAmwGsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-24T00:00:03.815Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Data\\Config\\UserConfiguration.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer-BankManagementSystem\\Data\\Config\\UserConfiguration.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Data\\Config\\UserConfiguration.cs",
-              "RelativeToolTip": "..\\DataAccessLayer-BankManagementSystem\\Data\\Config\\UserConfiguration.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAEgAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "LoginRequest.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DTO\\Auth\\LoginRequest.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer-BankManagementSystem\\DTO\\Auth\\LoginRequest.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DTO\\Auth\\LoginRequest.cs",
+              "RelativeToolTip": "..\\DataAccessLayer-BankManagementSystem\\DTO\\Auth\\LoginRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-27T00:10:30.667Z",
+              "WhenOpened": "2026-04-28T22:28:31.562Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 6,
+              "Title": "RefreshRequest.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DTO\\Auth\\RefreshRequest.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer-BankManagementSystem\\DTO\\Auth\\RefreshRequest.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DTO\\Auth\\RefreshRequest.cs",
+              "RelativeToolTip": "..\\DataAccessLayer-BankManagementSystem\\DTO\\Auth\\RefreshRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T15:59:16.271Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Users.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Entities\\Users.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer-BankManagementSystem\\Entities\\Users.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Entities\\Users.cs",
+              "RelativeToolTip": "..\\DataAccessLayer-BankManagementSystem\\Entities\\Users.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAqwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-28T22:20:16.744Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\back end\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\back end\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAABsAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T11:59:37.447Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "..\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAA/wEQAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-28T22:27:16.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Data\\Config\\UserConfiguration.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer-BankManagementSystem\\Data\\Config\\UserConfiguration.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Data\\Config\\UserConfiguration.cs",
+              "RelativeToolTip": "..\\DataAccessLayer-BankManagementSystem\\Data\\Config\\UserConfiguration.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAQwDsAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-28T22:24:23.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LogoutRequest.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DTO\\Auth\\LogoutRequest.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer-BankManagementSystem\\DTO\\Auth\\LogoutRequest.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DTO\\Auth\\LogoutRequest.cs",
+              "RelativeToolTip": "..\\DataAccessLayer-BankManagementSystem\\DTO\\Auth\\LogoutRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T15:59:36.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TokenResponse.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DTO\\Auth\\TokenResponse.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer-BankManagementSystem\\DTO\\Auth\\TokenResponse.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DTO\\Auth\\TokenResponse.cs",
+              "RelativeToolTip": "..\\DataAccessLayer-BankManagementSystem\\DTO\\Auth\\TokenResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T15:58:07.244Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Interfaces\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer-BankManagementSystem\\Interfaces\\IUserRepository.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Interfaces\\IUserRepository.cs",
+              "RelativeToolTip": "..\\DataAccessLayer-BankManagementSystem\\Interfaces\\IUserRepository.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAA9wAoAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-28T22:26:35.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "StudentOwnerOrAdminHandler.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\back end\\Authorization\\StudentOwnerOrAdminHandler.cs",
+              "RelativeDocumentMoniker": "Authorization\\StudentOwnerOrAdminHandler.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\back end\\Authorization\\StudentOwnerOrAdminHandler.cs",
+              "RelativeToolTip": "Authorization\\StudentOwnerOrAdminHandler.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T03:02:50.053Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ClientController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\back end\\Controllers\\ClientController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ClientController.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\back end\\Controllers\\ClientController.cs",
+              "RelativeToolTip": "Controllers\\ClientController.cs",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAAAKUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T00:10:08.67Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "StudentOwnerOrAdminRequirement.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\back end\\Authorization\\StudentOwnerOrAdminRequirement.cs",
+              "RelativeDocumentMoniker": "Authorization\\StudentOwnerOrAdminRequirement.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\back end\\Authorization\\StudentOwnerOrAdminRequirement.cs",
+              "RelativeToolTip": "Authorization\\StudentOwnerOrAdminRequirement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T02:59:19.065Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Clients.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Entities\\Clients.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer-BankManagementSystem\\Entities\\Clients.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Entities\\Clients.cs",
+              "RelativeToolTip": "..\\DataAccessLayer-BankManagementSystem\\Entities\\Clients.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-29T01:33:36.112Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "20260427154136_update-password.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260427154136_update-password.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260427154136_update-password.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260427154136_update-password.cs",
+              "RelativeToolTip": "..\\..\\..\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260427154136_update-password.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-27T15:41:36.841Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "20260427024923_Insert-data.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260427024923_Insert-data.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260427024923_Insert-data.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260427024923_Insert-data.cs",
+              "RelativeToolTip": "..\\..\\..\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260427024923_Insert-data.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-27T15:54:01.575Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\back end\\Controllers\\UserController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\back end\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\back end\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\back end\\Controllers\\UserController.cs",
               "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-05T13:14:25.561Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
+              "Title": "UserConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Data\\Config\\UserConfiguration.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Data\\Config\\UserConfiguration.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Data\\Config\\UserConfiguration.cs",
+              "RelativeToolTip": "..\\..\\..\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Data\\Config\\UserConfiguration.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAEgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-27T00:10:30.667Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\back end\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\back end\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\back end\\appsettings.json",
+              "ToolTip": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\back end\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -298,93 +513,79 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\back end\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\back end\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAAACMAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T11:59:37.447Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 62,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\UserRepository.cs",
-              "RelativeDocumentMoniker": "..\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\New folder (3)\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\UserRepository.cs",
               "ToolTip": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\UserRepository.cs",
-              "RelativeToolTip": "..\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "..\\..\\..\\New folder (3)\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\UserRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-27T00:07:46.6Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-27T00:07:46.6Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 63,
               "Title": "Users.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Entities\\Users.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer-BankManagementSystem\\Entities\\Users.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Entities\\Users.cs",
               "ToolTip": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Entities\\Users.cs",
-              "RelativeToolTip": "..\\DataAccessLayer-BankManagementSystem\\Entities\\Users.cs",
+              "RelativeToolTip": "..\\..\\..\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Entities\\Users.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-27T00:08:33.388Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-27T00:08:33.388Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 18,
               "Title": "20260427021431_Add-roles-authorization.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260427021431_Add-roles-authorization.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer-BankManagementSystem\\Migrations\\20260427021431_Add-roles-authorization.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260427021431_Add-roles-authorization.cs",
               "ToolTip": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260427021431_Add-roles-authorization.cs",
-              "RelativeToolTip": "..\\DataAccessLayer-BankManagementSystem\\Migrations\\20260427021431_Add-roles-authorization.cs",
+              "RelativeToolTip": "..\\..\\..\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260427021431_Add-roles-authorization.cs",
               "ViewState": "AgIAAC4AAAAAAAAAAAAswEAAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-27T02:14:32.319Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 64,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer-BankManagementSystem\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Data\\ApplicationDbContext.cs",
               "ToolTip": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "..\\DataAccessLayer-BankManagementSystem\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "..\\..\\..\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Data\\ApplicationDbContext.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAAwCcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-27T00:10:14.906Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 65,
               "Title": "Clients.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Entities\\Clients.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer-BankManagementSystem\\Entities\\Clients.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Entities\\Clients.cs",
               "ToolTip": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Entities\\Clients.cs",
-              "RelativeToolTip": "..\\DataAccessLayer-BankManagementSystem\\Entities\\Clients.cs",
+              "RelativeToolTip": "..\\..\\..\\New folder (3)\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Entities\\Clients.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-27T00:08:53.846Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 66,
               "Title": "ClientRepository.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\ClientRepository.cs",
-              "RelativeDocumentMoniker": "..\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\ClientRepository.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\New folder (3)\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\ClientRepository.cs",
               "ToolTip": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\ClientRepository.cs",
-              "RelativeToolTip": "..\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\ClientRepository.cs",
+              "RelativeToolTip": "..\\..\\..\\New folder (3)\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\ClientRepository.cs",
               "ViewState": "AgIAAGAAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-27T00:07:40.198Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 50,
               "Title": "UserConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Bank Full stack\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Data\\Config\\UserConfiguration.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Bank Full stack\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Data\\Config\\UserConfiguration.cs",
@@ -396,11 +597,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 19,
               "Title": "GeneraterHash.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\back end\\Controllers\\GeneraterHash.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\back end\\Controllers\\GeneraterHash.cs",
               "RelativeDocumentMoniker": "Controllers\\GeneraterHash.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\back end\\Controllers\\GeneraterHash.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\back end\\Controllers\\GeneraterHash.cs",
               "RelativeToolTip": "Controllers\\GeneraterHash.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -408,7 +609,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 49,
               "Title": "20260424010023_JWT-properties.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Bank Full stack\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260424010023_JWT-properties.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Bank Full stack\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260424010023_JWT-properties.cs",
@@ -420,7 +621,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 48,
               "Title": "ClientRepository.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Bank Full stack\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\ClientRepository.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Bank Full stack\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\ClientRepository.cs",
@@ -432,22 +633,22 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 21,
               "Title": "Back End-Bank Management System",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\back end\\Back End-Bank Management System.csproj",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\back end\\Back End-Bank Management System.csproj",
               "RelativeDocumentMoniker": "Back End-Bank Management System.csproj",
-              "ToolTip": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\back end\\Back End-Bank Management System.csproj",
+              "ToolTip": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\back end\\Back End-Bank Management System.csproj",
               "RelativeToolTip": "Back End-Bank Management System.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2026-04-25T22:08:54.541Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 20,
               "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\back end\\Properties\\launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\back end\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\back end\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\back end\\Properties\\launchSettings.json",
               "RelativeToolTip": "Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -455,7 +656,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 47,
               "Title": "20260424010741_AddPasswordHashAndRoleToUsers.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Bank Full stack\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260424010741_AddPasswordHashAndRoleToUsers.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Bank Full stack\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260424010741_AddPasswordHashAndRoleToUsers.cs",
@@ -467,7 +668,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 51,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Bank Full stack\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Bank Full stack\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Data\\ApplicationDbContext.cs",
@@ -479,7 +680,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 52,
               "Title": "20260424031112_UpdateUserSeedDataWithRealHashes.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Bank Full stack\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260424031112_UpdateUserSeedDataWithRealHashes.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Bank Full stack\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260424031112_UpdateUserSeedDataWithRealHashes.cs",
@@ -491,7 +692,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 53,
               "Title": "20260424004726_adding-JWT-properties.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Bank Full stack\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260424004726_adding-JWT-properties.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Bank Full stack\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Migrations\\20260424004726_adding-JWT-properties.cs",
@@ -503,7 +704,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 54,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Bank Full stack\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Bank Full stack\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\UserRepository.cs",
@@ -515,7 +716,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 55,
               "Title": "Users.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Bank Full stack\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Entities\\Users.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Bank Full stack\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Entities\\Users.cs",
@@ -527,7 +728,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 56,
               "Title": "ClientConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Bank Full stack\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Data\\Config\\ClientConfiguration.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Bank Full stack\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Data\\Config\\ClientConfiguration.cs",
@@ -539,7 +740,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 57,
               "Title": "TransferRequest.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Bank Full stack\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DTO\\TransferRequest.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Bank Full stack\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DTO\\TransferRequest.cs",
@@ -551,7 +752,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 58,
               "Title": "LoginRequest.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Bank Full stack\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DTO\\LoginRequest.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Bank Full stack\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DTO\\LoginRequest.cs",
@@ -563,7 +764,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 59,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Bank Full stack\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Interfaces\\IUserRepository.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Bank Full stack\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Interfaces\\IUserRepository.cs",
@@ -575,7 +776,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 43,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\Class1.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Bank Project\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\Class1.cs",
@@ -586,7 +787,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 42,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Class1.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Bank Project\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Class1.cs",
@@ -597,7 +798,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 41,
               "Title": "ClientRepository.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\ClientRepository.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Bank Project\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\ClientRepository.cs",
@@ -608,7 +809,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 26,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BusinessLayer-BankManagementSystem\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\source\\repos\\BusinessLayer-BankManagementSystem\\Repositories\\UserRepository.cs",
@@ -619,7 +820,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 40,
               "Title": "Clients.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Entities\\Clients.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Bank Project\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Entities\\Clients.cs",
@@ -630,7 +831,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 27,
               "Title": "ClientCountResult.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\DataAccessLayer=BankManagementSystem\\DTO\\ClientCountResult.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\source\\repos\\DataAccessLayer=BankManagementSystem\\DTO\\ClientCountResult.cs",
@@ -642,7 +843,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 28,
               "Title": "IClientRepository.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\DataAccessLayer=BankManagementSystem\\Interfaces\\IClientRepository.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\source\\repos\\DataAccessLayer=BankManagementSystem\\Interfaces\\IClientRepository.cs",
@@ -654,7 +855,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 29,
               "Title": "Clients.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\DataAccessLayer=BankManagementSystem\\Entities\\Clients.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\source\\repos\\DataAccessLayer=BankManagementSystem\\Entities\\Clients.cs",
@@ -666,7 +867,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 44,
               "Title": "IClientRepository.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Interfaces\\IClientRepository.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Bank Project\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Interfaces\\IClientRepository.cs",
@@ -677,7 +878,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 45,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Bank Project\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\UserRepository.cs",
@@ -688,7 +889,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 46,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Interfaces\\IUserRepository.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Bank Project\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\Interfaces\\IUserRepository.cs",
@@ -699,7 +900,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 30,
               "Title": "ClientConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\DataAccessLayer=BankManagementSystem\\Data\\Config\\ClientConfiguration.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\source\\repos\\DataAccessLayer=BankManagementSystem\\Data\\Config\\ClientConfiguration.cs",
@@ -711,7 +912,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 31,
               "Title": "DepositRequest.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\DataAccessLayer=BankManagementSystem\\DTO\\DepositRequest.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\source\\repos\\DataAccessLayer=BankManagementSystem\\DTO\\DepositRequest.cs",
@@ -723,7 +924,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 24,
               "Title": "ClientRepository.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BusinessLayer-BankManagementSystem\\Repositories\\ClientRepository.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\source\\repos\\BusinessLayer-BankManagementSystem\\Repositories\\ClientRepository.cs",
@@ -734,11 +935,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 23,
               "Title": "Back End-Bank Management System.csproj",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\back end\\Back End-Bank Management System.csproj",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\back end\\Back End-Bank Management System.csproj",
               "RelativeDocumentMoniker": "Back End-Bank Management System.csproj",
-              "ToolTip": "C:\\Users\\user\\Desktop\\New folder (3)\\banking-system-fullstack\\back end\\Back End-Bank Management System.csproj",
+              "ToolTip": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\back end\\Back End-Bank Management System.csproj",
               "RelativeToolTip": "Back End-Bank Management System.csproj",
               "ViewState": "AgIAAAEAAAAAAAAAAABhwCMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -746,7 +947,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 25,
               "Title": "LoginRequest.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\DataAccessLayer=BankManagementSystem\\DTO\\LoginRequest.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\source\\repos\\DataAccessLayer=BankManagementSystem\\DTO\\LoginRequest.cs",
@@ -758,7 +959,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 32,
               "Title": "UserConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\DataAccessLayer=BankManagementSystem\\Data\\Config\\UserConfiguration.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\source\\repos\\DataAccessLayer=BankManagementSystem\\Data\\Config\\UserConfiguration.cs",
@@ -770,7 +971,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 33,
               "Title": "Users.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\DataAccessLayer=BankManagementSystem\\Entities\\Users.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\source\\repos\\DataAccessLayer=BankManagementSystem\\Entities\\Users.cs",
@@ -782,7 +983,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 34,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\DataAccessLayer=BankManagementSystem\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\source\\repos\\DataAccessLayer=BankManagementSystem\\Data\\ApplicationDbContext.cs",
@@ -794,7 +995,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 35,
               "Title": "TransferRequest.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\DataAccessLayer=BankManagementSystem\\DTO\\TransferRequest.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\source\\repos\\DataAccessLayer=BankManagementSystem\\DTO\\TransferRequest.cs",
@@ -806,7 +1007,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 36,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\DataAccessLayer=BankManagementSystem\\Interfaces\\IUserRepository.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\source\\repos\\DataAccessLayer=BankManagementSystem\\Interfaces\\IUserRepository.cs",
@@ -818,7 +1019,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 37,
               "Title": "DataAccessLayer-BankManagementSystem.csproj",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\DataAccessLayer=BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\source\\repos\\DataAccessLayer=BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj",
@@ -830,7 +1031,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 38,
               "Title": "BusinessLayer-BankManagementSystem.csproj",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\BusinessLayer-BankManagementSystem\\BusinessLayer-BankManagementSystem.csproj",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\source\\repos\\BusinessLayer-BankManagementSystem\\BusinessLayer-BankManagementSystem.csproj",
@@ -842,7 +1043,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 39,
               "Title": "20250506000926_initial.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\DataAccessLayer=BankManagementSystem\\Migrations\\20250506000926_initial.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\source\\repos\\DataAccessLayer=BankManagementSystem\\Migrations\\20250506000926_initial.cs",

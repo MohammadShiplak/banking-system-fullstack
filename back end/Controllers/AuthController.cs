@@ -1,5 +1,5 @@
 ﻿using DataAccessLayer_BankManagementSystem.Data;
-using DataAccessLayer_BankManagementSystem.DTO;
+using DataAccessLayer_BankManagementSystem.DTO.Auth;
 using DataAccessLayer_BankManagementSystem.Entities;
 using DataAccessLayer_BankManagementSystem.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -9,6 +9,9 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using System.Security.Cryptography;
+using Back_End_Bank_Management_System.Auth;
+using Azure.Core;
 
 namespace Back_End_Bank_Management_System.Controllers
 {
@@ -31,101 +34,143 @@ namespace Back_End_Bank_Management_System.Controllers
             _context = context; 
         }
 
-
-
-        // This endpoint handles user login.
-        // It verifies credentials and returns a JWT token if login succeeds.
-        [HttpPost("login")]
-        [AllowAnonymous]
-        public async Task<IActionResult> Login([FromBody] LoginRequest request)
+        private static string GenerateRefreshToken()
         {
-            // Step 1: Find the user by email from the database.
-            // Email acts as the unique login identifier
-            var user = await _userRepository.GetUserByEmailAsync(request.Email);
-
-
-            // If no user is found with the given email,
-            // return 401 Unauthorized without revealing which field was wrong.
-            if (user == null)
-            {
-                return Unauthorized(new { message = "Invalid Credentials" });
-            }
-            // Step 2: Verify the provided password against the stored hash.
-            // BCrypt handles hashing and salt internally.
-
-            bool isValidPassword = BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash);
-
-            // If the password does not match the stored hash,
-            // return 401 Unauthorized.
-
-            if (!isValidPassword)
-                return Unauthorized("Invalid credentials");
-
-            // Step 3: Create claims that represent the authenticated user's identity.
-            // These claims will be embedded inside the JWT.
-
-            var claims = new[]
-            {
-
-                 // Unique identifier for the user
-                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-
-                 // User email address
-                 new Claim(ClaimTypes.Email, user.Email),    
-
-                 // Role (Teller or Admin or Client) used later for authorization
-                 new Claim(ClaimTypes.Role, user.Role)
-
-            };
-
-            // Step 4: Create the symmetric security key used to sign the JWT.
-            // This key must match the key used in JWT validation middleware.
-
-
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("THIS_IS_A_VERY_SECRET_KEY_123456"));
-
-            // Step 5: Define the signing credentials.
-            // This specifies the algorithm used to sign the token.
-
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-
-            // Step 6: Create the JWT token.
-            // The token includes issuer, audience, claims, expiration, and signature.
-
-            var token = new JwtSecurityToken(
-
-                issuer: "BankAPI",
-                audience: "BankAPIManagementSystem",
-                claims: claims,
-                expires: DateTime.Now.AddMinutes(30),
-                signingCredentials: creds
-
-                );
-
-            // Step 7: Return the serialized JWT token to the client.
-            // The client will send this token with future requests.
-
-
-
-
-            return Ok(new
-            {
-                token = new JwtSecurityTokenHandler().WriteToken(token)
-
-            });
-
-
+            var bytes = new byte[64];
+            using var rng = RandomNumberGenerator.Create();
+            rng.GetBytes(bytes);
+            return Convert.ToBase64String(bytes);
         }
 
 
 
+     
+        [HttpPost("login")]
+        [AllowAnonymous]
+        public async Task<IActionResult> Login([FromBody] LoginRequest request)
+        {
+            var user = _context.Users.FirstOrDefault(s => s.Email == request.Email);
+
+            if (user == null)
+                return Unauthorized("Invalid credentials");
+
+            bool isValidPassword = BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash);
+
+            if (!isValidPassword)
+                return Unauthorized("Invalid credentials");
+
+            var claims = new[]
+            {
+        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+        new Claim(ClaimTypes.Email,          user.Email),
+        new Claim(ClaimTypes.Role,           user.Role)
+    };
+
+            var key = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes("THIS_IS_A_VERY_SECRET_KEY_123456"));
+
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var token = new JwtSecurityToken(
+                issuer: "BankAPI",
+                audience: "BankAPIManagementSystem",
+                claims: claims,
+                expires: DateTime.UtcNow.AddMinutes(30),
+                signingCredentials: creds
+            );
+
+            var accessToken = new JwtSecurityTokenHandler().WriteToken(token);
+
+            // Generate raw refresh token
+            var rawRefreshToken = GenerateRefreshToken();
+
+            // ✅ CORRECT: save RAW to RefreshToken, HASH to RefreshTokenHash
+            user.RefreshToken = rawRefreshToken;                                  // ← raw
+            user.RefreshTokenHash = BCrypt.Net.BCrypt.HashPassword(rawRefreshToken);  // ← hash
+            user.RefreshTokenExpiresAt = DateTime.UtcNow.AddDays(7);
+            user.RefreshTokenRevokedAt = null;
+
+            _context.SaveChanges();
+
+            // ✅ Verify both fields saved correctly
+            Console.WriteLine($"RefreshToken:     {user.RefreshToken}");
+            Console.WriteLine($"RefreshTokenHash: {user.RefreshTokenHash}");
+            Console.WriteLine($"ExpiresAt:        {user.RefreshTokenExpiresAt}");
+
+            return Ok(new TokenResponse
+            {
+                AccessToken = accessToken,
+                RefreshToken = rawRefreshToken  // ← send RAW to frontend
+            });
+        }
 
 
+        [HttpPost("refresh")]
+        public IActionResult Refresh([FromBody] RefreshRequest request)
+        {
+            var user = _context.Users.FirstOrDefault(u => u.Email == request.Email);
 
+            if (user == null)
+                return BadRequest("Invalid refresh request");
 
+            if (user.RefreshTokenRevokedAt != null)
+                return Unauthorized("Refresh token was revoked, please login again");
 
+            if (user.RefreshTokenExpiresAt == null ||
+                user.RefreshTokenExpiresAt <= DateTime.UtcNow)
+                return Unauthorized("Refresh token expired, please login again");
 
+            // ✅ FIX: check if RefreshTokenHash is null BEFORE calling BCrypt
+            // If null → user logged in with old code → force them to login again
+            if (string.IsNullOrEmpty(user.RefreshTokenHash))
+                return Unauthorized("Session invalid, please login again");
+
+            // Now safe to call BCrypt — hash is guaranteed not null
+            bool refreshValid = BCrypt.Net.BCrypt.Verify(
+                request.RefreshToken,
+                user.RefreshTokenHash
+            );
+
+            if (!refreshValid)
+                return Unauthorized("Invalid refresh token");
+
+            // Generate new tokens
+            var claims = new[]
+            {
+        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+        new Claim(ClaimTypes.Email,          user.Email),
+        new Claim(ClaimTypes.Role,           user.Role)
+    };
+
+            var key = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes("THIS_IS_A_VERY_SECRET_KEY_123456"));
+
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var jwt = new JwtSecurityToken(
+                issuer: "BankAPI",
+                audience: "BankAPIManagementSystem",
+                claims: claims,
+                expires: DateTime.UtcNow.AddMinutes(30),
+                signingCredentials: creds
+            );
+
+            var newAccessToken = new JwtSecurityTokenHandler().WriteToken(jwt);
+            var newRefreshToken = GenerateRefreshToken();
+
+            user.RefreshToken = newRefreshToken;
+            user.RefreshTokenHash = BCrypt.Net.BCrypt.HashPassword(newRefreshToken);
+            user.RefreshTokenExpiresAt = DateTime.UtcNow.AddDays(7);
+            user.RefreshTokenRevokedAt = null;
+
+            _context.SaveChanges();
+
+            return Ok(new TokenResponse
+            {
+                AccessToken = newAccessToken,
+                RefreshToken = newRefreshToken
+            });
+        }
 
 
 

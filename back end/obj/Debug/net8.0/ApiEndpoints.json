@@ -9,7 +9,23 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "DataAccessLayer_BankManagementSystem.DTO.LoginRequest",
+        "Type": "DataAccessLayer_BankManagementSystem.DTO.Auth.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Back_End_Bank_Management_System.Controllers.AuthController",
+    "Method": "Refresh",
+    "RelativePath": "api/Auth/refresh",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Back_End_Bank_Management_System.Auth.RefreshRequest",
         "IsRequired": true
       }
     ],

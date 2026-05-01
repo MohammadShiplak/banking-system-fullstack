@@ -1,9 +1,12 @@
 ﻿
+using Back_End_Bank_Management_System.Authorization;
 using BusinessLayer_BankManagementSystem.Services;
 using DataAccessLayer_BankManagementSystem.Data;
 using DataAccessLayer_BankManagementSystem.Entities;
 using DataAccessLayer_BankManagementSystem.Interfaces;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -44,9 +47,20 @@ builder.Services.AddCors(options =>
     });
 });
 
+// ─── Authorization ──────────────────────────────────────────────────
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("StudentOwnerOrAdmin", policy =>
+        policy.AddRequirements(new StudentOwnerOrAdminRequirement()));
+});
+
+
+
 // ─── 3. Repositories ──────────────────────────────────────────
 builder.Services.AddScoped(typeof(IUserRepository<>), typeof(UserRepository<>));
 builder.Services.AddScoped(typeof(IClientRepository<>), typeof(ClientRepository<>));
+builder.Services.AddSingleton<IAuthorizationHandler,StudentOwnerOrAdminHandler>();    
 
 // ─── 4. Controllers + Swagger ─────────────────────────────────
 builder.Services.AddControllers();

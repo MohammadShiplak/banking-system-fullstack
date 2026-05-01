@@ -163,11 +163,19 @@ namespace Back_End_Bank_Management_System.Controllers
 
 
         [HttpGet("{Id}")]
-        [Authorize(Roles = "Admin,Teller,Client")]
-        public async Task <IActionResult> Get(int Id)
+       // [Authorize(Roles = "Admin,Teller,Client")]
+        public async Task <IActionResult> Get(int Id, [FromServices] IAuthorizationService authorizationService)
         {
             var client = await _clientRepository.GetByClientsinfoByIdAsync(Id);
             if (client == null) return NotFound();
+
+            var authResult = await authorizationService.AuthorizeAsync(User, Id, "StudentOwnerOrAdmin"); 
+
+            if(!authResult.Succeeded)
+                return Forbid(); // 403 Forbidden if user is not authorized to access this client
+
+
+
             return Ok(client);
         }
 
