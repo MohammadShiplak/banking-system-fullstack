@@ -71,16 +71,47 @@ export const Login = async (email: string, password: string) => {
       Password: password,
     });
 
-    const token = response.data.token;
-
-    if (token) {
-      localStorage.setItem("authToken", token);
-      console.log("✅ Token saved");
-    }
-
     return response.data; // Return the token directly
   } catch (error) {
     console.error("Transfer failed:", error);
     throw error; // Let the thunk handle the rejection
+  }
+};
+// ── NEW: Refresh Token API ────────────────────────────────────
+// Called automatically when access token expires
+// User never sees this happen
+export const RefreshTokenApi = async (email: string, refreshToken: string) => {
+  // Send email + refresh token to backend
+  // Backend verifies refresh token and returns new tokens
+  //
+
+  try {
+    const response = await axiosInstance.post(`/api/Auth/refresh`, {
+      Email: email,
+      RefreshToken: refreshToken,
+    });
+
+    return response.data; // Return new tokens
+  } catch (error) {
+    console.error("Token refresh failed:", error);
+  }
+};
+// ── NEW: Logout API ───────────────────────────────────────────
+// Tells backend to revoke the refresh token in database
+// So even if someone steals the token, it won't work
+export const LogoutApi = async (email: string, refreshToken: string) => {
+  // Send email + refresh token to backend
+  // Backend verifies refresh token and returns new tokens
+  //
+
+  try {
+    const response = await axiosInstance.post(`/api/Auth/logout`, {
+      Email: email,
+      RefreshToken: refreshToken,
+    });
+
+    return response.data; // Return new tokens
+  } catch (error) {
+    console.error("Logout API failed:", error);
   }
 };

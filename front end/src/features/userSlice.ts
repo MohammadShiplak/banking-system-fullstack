@@ -7,6 +7,8 @@ import {
   GetUserbyId,
   Login,
   fetchUserCount,
+  RefreshTokenApi,
+  LogoutApi,
 } from "../API/UserAPI";
 import { User } from "../types/user";
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
@@ -91,18 +93,61 @@ export const LoginPage = createAsyncThunk<
     return response;
   } catch (error) {
     return rejectWithValue(
-      error instanceof Error ? error.message : "Deposit failed",
+      error instanceof Error ? error.message : "Login failed",
     );
   }
 });
+// ── NEW: Refresh Token thunk ──────────────────────────────────
+// This is called AUTOMATICALLY by axiosInstance interceptor
+// when a 401 error happens
+// The user never calls this manually
+export const RefreshToken = createAsyncThunk(
+  "user/refreshToken",
+  async (_, { getState, rejectWithValue }) => {
+    // Get the current refresh
 
+    try {
+      // token and email from Redux state
+      // getState() gives us the entire Redux store
+      //
+      const state = getState() as any;
+      const refreshToken = state.users.refreshToken;
+      const email = state.users.email;
+
+      if (!refreshToken || !email) {
+        return rejectWithValue("No refresh token or email available");
+      }
+      const response = await RefreshTokenApi(email, refreshToken);
+      return response; // This should contain the new access token (and maybe a new refresh token)
+    } catch (error) {
+      return rejectWithValue("session expired, please login gain");
+    }
+  },
+); // ── NEW: Logout thunk ─────────────────────────────────────────
+// Clears everything from Redux and localStorage
+// Also tells backend to revoke the refresh token
+
+export const Logout = createAsyncThunk(
+  "user/logout",
+  async (_, { getState }) => {
+    const state = getState() as any;
+    const refreshToken = state.users.refreshToken;
+    const email = state.users.email; // Tell backend to revoke refresh token
+
+    if (refreshToken && email) {
+      await LogoutApi(email, refreshToken);
+    }
+  },
+);
 interface LoginRequest {
   Email?: string;
 
   Password: string;
 }
+// updated to handle two tokens
 interface LoginResponse {
-  token: string;
+  accessToken: string;
+  refreshToken: string;
 }
 interface UserCounts {
   userCount: number | null;
@@ -111,8 +156,8 @@ interface UserCounts {
 }
 
 interface UserState {
-  token: string | null;
-
+  accessToken: string | null;
+  refreshToken: string | null;
   role: string | null;
 
   email: string | null;
@@ -135,13 +180,23 @@ interface UserState {
 const savedToken = localStorage.getItem("authToken");
 // If there's a saved token, decode it to get the role
 // Otherwise role is null (user is not logged in)
+// ── Initial State ─────────────────────────────────────────────
+// When page loads, check if tokens already exist in localStorage
+// This keeps user logged in after page refresh
 
+const savedAccessToken = localStorage.getItem("accessToken");
+const savedRefreshToken = localStorage.getItem("refreshToken");
+
+const savedDecoded = savedAccessToken ? decodeToken(savedAccessToken) : null;
+/*
 const savedRole = savedToken ? (decodeToken(savedToken)?.role ?? null) : null;
 const savedEmail = savedToken ? (decodeToken(savedToken)?.email ?? null) : null;
+*/
 const initialState: UserState = {
-  token: savedToken,
-  role: savedRole,
-  email: savedEmail,
+  accessToken: savedAccessToken,
+  refreshToken: savedRefreshToken,
+  role: savedDecoded?.role ?? null,
+  email: savedDecoded?.email ?? null,
   isAuthenticated: !!localStorage.getItem("authToken"),
   items: [],
 
@@ -160,11 +215,12 @@ const UserSliceReducer = createSlice({
     //
 
     logout(state) {
-      state.token = null;
-      state.role = null;
+      state.accessToken = null;
+      state.refreshToken = null;
       state.email = null;
       state.isAuthenticated = false;
-      localStorage.removeItem("authToken");
+      localStorage.removeItem("accessToken");
+      localStorage.removeItem("refreshToken");
     },
   },
 
@@ -232,16 +288,17 @@ const UserSliceReducer = createSlice({
       .addCase(LoginPage.fulfilled, (state, action) => {
         state.status = "succeeded";
 
-        const token = action.payload.token;
+        const { accessToken, refreshToken } = action.payload;
+
         // Save token to localStorage so it survives page refresh
 
-        localStorage.setItem("authToken", token);
+        localStorage.setItem("accessToken", accessToken);
+        localStorage.setItem("refreshToken", refreshToken);
 
-        //Save the raw token string in Redux
-        state.token = token;
-
+        state.accessToken = accessToken;
+        state.refreshToken = refreshToken;
         // ← NEW: Decode the token to extract the role
-        const decoded = decodeToken(token);
+        const decoded = decodeToken(accessToken);
         // ← NEW: Save role to Redux state
         // decoded.role will be "Admin", "Teller", or "Client"
         console.log("🔍 Decoded token:", decoded);
@@ -249,6 +306,41 @@ const UserSliceReducer = createSlice({
         // ← NEW: Save email to Redux state
         state.email = decoded?.email ?? null;
         state.isAuthenticated = true;
+      })
+      .addCase(RefreshToken.fulfilled, (state, action) => {
+        const { accessToken, refreshToken } = action.payload;
+
+        localStorage.setItem("accessToken", accessToken);
+        localStorage.setItem("refreshToken", refreshToken);
+
+        state.accessToken = accessToken;
+        state.refreshToken = refreshToken;
+
+        const decoded = decodeToken(accessToken);
+
+        state.role = decoded?.role ?? null;
+        state.email = decoded?.email ?? null;
+        state.isAuthenticated = true;
+      })
+      .addCase(RefreshToken.rejected, (state) => {
+        // Refresh failed → force full logout
+        // This happens when refresh token is also expired (after 7 days)
+        state.accessToken = null;
+        state.refreshToken = null;
+        state.role = null;
+        state.email = null;
+        state.isAuthenticated = false;
+        localStorage.removeItem("accessToken");
+        localStorage.removeItem("refreshToken");
+      })
+      .addCase(Logout.fulfilled, (state) => {
+        state.accessToken = null;
+        state.refreshToken = null;
+        state.role = null;
+        state.email = null;
+        state.isAuthenticated = false;
+        localStorage.removeItem("accessToken");
+        localStorage.removeItem("refreshToken");
       })
       .addCase(fetchUserCounts.pending, (state) => {
         state.status = "pending";

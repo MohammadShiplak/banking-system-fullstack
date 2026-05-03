@@ -1,59 +1,91 @@
 import axios from "axios";
+import { store } from "../store";
+import { RefreshToken, Logout } from "../features/userSlice";
+import { navigateTo } from "../utils/navigationHelper"; // ← NEW
 
-/**
- * Create axios instance with interceptors for JWT authentication
- * This automatically adds the JWT token to every API request
- */
 const axiosInstance = axios.create({
   baseURL: "https://localhost:7259",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  withCredentials: true, // Allow credentials (cookies, auth headers)
-  httpsAgent: {
-    rejectUnauthorized: false, // Allow self-signed certificates in development
-  },
+  headers: { "Content-Type": "application/json" },
 });
 
-/**
- * Request Interceptor: Add JWT token to all requests
- * Runs BEFORE the request is sent to the server
- */
+// ─────────────────────────────────────────
+// REQUEST INTERCEPTOR
+// Adds token to every request automatically
+// ─────────────────────────────────────────
 axiosInstance.interceptors.request.use(
   (config) => {
-    // Get token from localStorage
-    const token = localStorage.getItem("authToken");
+    const accessToken = store.getState().users.accessToken;
 
-    // If token exists, add it to request header
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
+    if (accessToken) {
+      config.headers.Authorization = `Bearer ${accessToken}`;
     }
-
     return config;
   },
-  (error) => {
-    // Handle request setup errors
-    return Promise.reject(error);
-  },
+  (error) => Promise.reject(error),
 );
 
-/**
- * Response Interceptor: Handle token expiration and errors
- * Runs AFTER response is received from server
- */
-axiosInstance.interceptors.response.use(
-  (response) => {
-    // Success response - just return it
-    return response;
-  },
-  (error) => {
-    // Handle 401 (Unauthorized) - token expired or invalid
-    if (error.response?.status === 401) {
-      // Clear old token
-      localStorage.removeItem("authToken");
+let isRefreshing = false;
 
-      // Redirect to login
-      window.location.href = "/login";
+// ─────────────────────────────────────────
+// RESPONSE INTERCEPTOR
+// ─────────────────────────────────────────
+axiosInstance.interceptors.response.use(
+  (response) => response,
+
+  async (error) => {
+    const originalRequest = error.config;
+    const status = error.response?.status;
+
+    console.log("❌ Error:", status, error.config?.url);
+
+    // ─────────────────────────────────────────
+    // 403 = user is logged in but wrong role
+    // Do NOT logout — just go to forbidden page
+    // ─────────────────────────────────────────
+    if (status === 403) {
+      // ✅ Use navigateTo instead of window.location.href
+      navigateTo("/Forbidden");
+      return Promise.reject(error);
+    }
+
+    // ─────────────────────────────────────────
+    // 401 = token expired → try to refresh
+    // ─────────────────────────────────────────
+    if (status === 401 && !originalRequest._retry) {
+      if (isRefreshing) {
+        store.dispatch(Logout());
+        // ✅ Use navigateTo instead of window.location.href
+        navigateTo("/Login");
+        return Promise.reject(error);
+      }
+
+      originalRequest._retry = true;
+      isRefreshing = true;
+
+      try {
+        const result = await store.dispatch(RefreshToken());
+
+        if (RefreshToken.fulfilled.match(result)) {
+          // ✅ Refresh worked — retry original request
+          const newAccessToken = result.payload.accessToken;
+          originalRequest.headers.Authorization = `Bearer ${newAccessToken}`;
+          isRefreshing = false;
+          return axiosInstance(originalRequest);
+        } else {
+          // ❌ Refresh failed — logout and go to login
+          isRefreshing = false;
+          store.dispatch(Logout());
+          // ✅ Use navigateTo instead of window.location.href
+          navigateTo("/Login");
+          return Promise.reject(error);
+        }
+      } catch (refreshError) {
+        isRefreshing = false;
+        store.dispatch(Logout());
+        // ✅ Use navigateTo instead of window.location.href
+        navigateTo("/Login");
+        return Promise.reject(refreshError);
+      }
     }
 
     return Promise.reject(error);
