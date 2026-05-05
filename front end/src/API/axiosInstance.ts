@@ -1,12 +1,36 @@
 import axios from "axios";
-import { store } from "../store";
-import { RefreshToken, Logout } from "../features/userSlice";
+
+import { RefreshToken, Logout, setRateLimit } from "../features/userSlice";
 import { navigateTo } from "../utils/navigationHelper"; // ← NEW
 
 const axiosInstance = axios.create({
   baseURL: "https://localhost:7259",
   headers: { "Content-Type": "application/json" },
 });
+
+// Rate limiting// We need to pass the Redux store in so the bouncer can update the brain
+let store: any;
+export const injectStore = (_store: any) => {
+  store = _store;
+};
+
+// The Bouncer
+axiosInstance.interceptors.response.use(
+  (response) => {
+    // If the server says "200 OK", let it through normally
+    return response;
+  },
+  (error) => {
+    // If the server throws an error, check the status code
+    if (error.response?.status === 429) {
+      // 429 means "Too Many Requests".
+      // Tell Redux to put the user in timeout for 60 seconds!
+      store.dispatch(setRateLimit(60));
+    }
+
+    return Promise.reject(error);
+  },
+);
 
 // ─────────────────────────────────────────
 // REQUEST INTERCEPTOR

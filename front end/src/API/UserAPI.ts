@@ -21,9 +21,9 @@ export const fetchUserCount = async () => {
   }
 };
 
-export const AddUserApi = async (user: User) => {
+export const registerApi = async (userData: any) => {
   try {
-    const response = await axiosInstance.post(`/api/User`, user);
+    const response = await axiosInstance.post(`/api/Auth/register`, userData);
 
     return response.data;
   } catch (error) {

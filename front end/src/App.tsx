@@ -12,7 +12,7 @@ import Forbidden from "./Components/Component/pages/Forbidden";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import InertUsers from "./Components/Component/Users/InertUsers";
 import { useEffect } from "react";
-
+import RegisterForm from "./Components/Component/Login/handleRegister";
 function App() {
   useEffect(() => {
     // ─────────────────────────────────────────
@@ -53,6 +53,7 @@ function App() {
             <Route path="/login" element={<LoginForm />} />
             <Route path="/Forbidden" element={<Forbidden />} />
             <Route path="/Main" element={<Main />} />
+            <Route path="/Register" element={<RegisterForm />} />
 
             <Route path="/Add" element={<Add />} />
             <Route path="/Edit/:Id" element={<Edit />} />

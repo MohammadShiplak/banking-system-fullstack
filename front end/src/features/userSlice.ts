@@ -1,6 +1,6 @@
 import { use } from "react";
 import {
-  AddUserApi,
+  registerApi,
   UpdateUser,
   DeleteUser,
   fetchUser,
@@ -29,11 +29,11 @@ export const fetchUserCounts = createAsyncThunk<UserCounts, void>(
   },
 );
 
-export const Adduser = createAsyncThunk(
+export const RegisterUser = createAsyncThunk(
   "Users/AddUsers",
-  async (user: User, { rejectWithValue }) => {
+  async (registerData: any, { rejectWithValue }) => {
     try {
-      const response = await AddUserApi(user);
+      const response = await registerApi(registerData);
 
       return response;
     } catch (error: any) {
@@ -80,21 +80,33 @@ export const GetUsersbyId = createAsyncThunk(
     }
   },
 );
-
 export const LoginPage = createAsyncThunk<
-  LoginResponse, // Return type
-  LoginRequest, // Input type
-  { rejectValue: string } // Error type
+  LoginResponse,
+  LoginRequest,
+  { rejectValue: string }
 >("user/login", async (loginData: LoginRequest, { rejectWithValue }) => {
   try {
     const email = loginData.Email || "";
-
     const response = await Login(email, loginData.Password);
     return response;
-  } catch (error) {
-    return rejectWithValue(
-      error instanceof Error ? error.message : "Login failed",
-    );
+  } catch (error: any) {
+    // ✅ Check if the backend sent a specific HTTP status code
+    if (error.response) {
+      if (error.response.status === 429) {
+        return rejectWithValue("429"); // Tells LoginForm it's a rate limit!
+      }
+      if (error.response.status === 401) {
+        return rejectWithValue("401"); // Tells LoginForm it's a bad password!
+      }
+
+      // Return whatever custom message the backend sent, if any
+      return rejectWithValue(
+        error.response.data?.message || error.response.data || "Login failed",
+      );
+    }
+
+    // Fallback if the server is completely down
+    return rejectWithValue("Network error or server is down");
   }
 });
 // ── NEW: Refresh Token thunk ──────────────────────────────────
@@ -169,6 +181,12 @@ interface UserState {
   items: User[];
 
   userCounts: UserCounts | null;
+
+  // New: Rate limiting State
+  isRateLimited: boolean;
+  rateLimitedMessage: string | null;
+  rateLimitSeconds: number;
+  failedAttempts: number; // <-- NEW
 }
 // ─────────────────────────────────────────
 // INITIAL STATE — read from localStorage on page load
@@ -203,17 +221,19 @@ const initialState: UserState = {
   status: "idle",
 
   userCounts: null,
+
+  //-----NEW : Rate Limiting defaults
+  isRateLimited: false,
+  rateLimitedMessage: "",
+  rateLimitSeconds: 0,
+  failedAttempts: 0, // <-- NEW (Starts at 0)
 };
 
 const UserSliceReducer = createSlice({
   name: "Users",
 
   initialState,
-
   reducers: {
-    // ← NEW: Logout action — clears everything
-    //
-
     logout(state) {
       state.accessToken = null;
       state.refreshToken = null;
@@ -221,6 +241,23 @@ const UserSliceReducer = createSlice({
       state.isAuthenticated = false;
       localStorage.removeItem("accessToken");
       localStorage.removeItem("refreshToken");
+    }, // ← NEW: Logout action — clears everything
+    //
+    // 1. Put the user in timeout
+    setRateLimit: (state, action) => {
+      state.isRateLimited = action.payload.messsage;
+      state.rateLimitSeconds = action.payload.seconds; // e.g., 60 seconds
+    },
+    // 2. Tick the clock down by 1 second
+    decrementTimer: (state) => {
+      if (state.rateLimitSeconds > 0) {
+        state.rateLimitSeconds -= 1;
+      }
+    },
+    // 3. Let them out of timeout
+    clearRateLimit: (state) => {
+      state.isRateLimited = false;
+      state.rateLimitSeconds = 0;
     },
   },
 
@@ -236,13 +273,13 @@ const UserSliceReducer = createSlice({
       .addCase(fetchUsers.rejected, (state) => {
         state.status = "failed";
       })
-      .addCase(Adduser.pending, (state) => {
+      .addCase(RegisterUser.pending, (state) => {
         state.status = "pending";
       })
-      .addCase(Adduser.rejected, (state) => {
+      .addCase(RegisterUser.rejected, (state) => {
         state.status = "failed";
       })
-      .addCase(Adduser.fulfilled, (state, action) => {
+      .addCase(RegisterUser.fulfilled, (state, action) => {
         state.status = "succeeded";
         state.items.push(action.payload);
       })
@@ -282,12 +319,33 @@ const UserSliceReducer = createSlice({
       .addCase(LoginPage.pending, (state) => {
         state.status = "pending";
       })
-      .addCase(LoginPage.rejected, (state) => {
-        state.status = "failed";
+      .addCase(LoginPage.rejected, (state, action) => {
+        state.status = "failed"; // ❌ If the backend says 401 (Wrong Password)
+        if (action.payload === "401") {
+          // 1. Add a strike to the counter
+          state.failedAttempts += 1;
+
+          // 2. Did they hit 3 strikes?
+          if (state.failedAttempts >= 3) {
+            // LOCK THE DOOR!
+            state.isRateLimited = true;
+            state.rateLimitedMessage = "Too many failed attempts. Please wait.";
+            state.rateLimitSeconds = 60; // They must wait 60 seconds
+
+            // Reset the counter so it's ready for the next time they try
+            state.failedAttempts = 0;
+          }
+        }
+        // ❌ If the backend itself triggers a 429
+        else if (action.payload === "429") {
+          state.isRateLimited = true;
+          state.rateLimitedMessage = "Too many requests. Please wait.";
+          state.rateLimitSeconds = 60;
+        }
       })
       .addCase(LoginPage.fulfilled, (state, action) => {
         state.status = "succeeded";
-
+        state.failedAttempts = 0;
         const { accessToken, refreshToken } = action.payload;
 
         // Save token to localStorage so it survives page refresh
@@ -355,5 +413,6 @@ const UserSliceReducer = createSlice({
   },
 });
 // Export the logout action so components can use it
-export const { logout } = UserSliceReducer.actions;
+export const { logout, setRateLimit, decrementTimer, clearRateLimit } =
+  UserSliceReducer.actions;
 export default UserSliceReducer.reducer;

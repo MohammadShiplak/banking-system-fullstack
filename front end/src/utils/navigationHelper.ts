@@ -9,12 +9,9 @@
 // ─────────────────────────────────────────
 
 // Fire a navigation event from anywhere in your app
-export const navigateTo = (path: string) => {
-  // Create a custom browser event with the path
-  const event = new CustomEvent("navigate", {
-    detail: { path }, // pass the path we want to go to
-  });
+// utils/navigationHelper.ts
 
-  // Dispatch it on the window so App.tsx can listen
-  window.dispatchEvent(event);
+export const navigateTo = (path: string) => {
+  // Use native browser navigation instead of a React hook!
+  window.location.href = path;
 };

@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useAppDispatch } from "../../../store";
-import { Adduser } from "../../../features/userSlice";
+import { RegisterUser } from "../../../features/userSlice";
 import { useToast } from "../contexts/ToastContext";
 import { useNavigate } from "react-router-dom";
 
@@ -47,7 +47,7 @@ export default function AddUsers() {
     };
 
     try {
-      await dispatch(Adduser(userToSend as any)).unwrap();
+      await dispatch(RegisterUser(userToSend as any)).unwrap();
 
       // Reset fields after success
       setUserName("");

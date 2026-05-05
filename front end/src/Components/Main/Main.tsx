@@ -141,7 +141,7 @@ const Main = () => {
               variant="light"
               className="mb-2 text-start sidebar-btn"
               onClick={() => {
-                //   handleCloseSidebar();
+                handleLogout();
                 // setShowChangePassword(true);
                 navigate("/");
               }}
@@ -165,8 +165,6 @@ const Main = () => {
                 <span>
                   Welcome, {email} ({role})
                 </span>
-
-                <button onClick={handleLogout}>Logout</button>
               </>
             )}
           </nav>
