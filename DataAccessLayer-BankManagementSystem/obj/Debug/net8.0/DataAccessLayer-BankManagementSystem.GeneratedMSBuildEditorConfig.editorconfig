@@ -16,6 +16,6 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DataAccessLayer_BankManagementSystem
-build_property.ProjectDir = C:\Users\user\Desktop\Bank Project\banking-system-fullstack\DataAccessLayer-BankManagementSystem\
+build_property.ProjectDir = C:\Users\user\Desktop\Full Stack project\banking-system-fullstack\DataAccessLayer-BankManagementSystem\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

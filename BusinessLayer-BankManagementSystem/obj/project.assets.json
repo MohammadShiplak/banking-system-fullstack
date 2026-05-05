@@ -47,6 +47,19 @@
           }
         }
       },
+      "BCrypt.Net-Next/4.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/BCrypt.Net-Next.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/BCrypt.Net-Next.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
         "type": "package",
         "compile": {
@@ -1008,6 +1021,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "BCrypt.Net-Next": "4.1.0",
           "Microsoft.EntityFrameworkCore": "9.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.8"
         },
@@ -1057,6 +1071,35 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "BCrypt.Net-Next/4.1.0": {
+      "sha512": "5YT3DKllmtkyW68PjURu/V1TOe4MKiByKwsRNVcfYE1S5KuFTeozdmKzyNzolKiQF391OXCaQtINvYT3j1ERzQ==",
+      "type": "package",
+      "path": "bcrypt.net-next/4.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bcrypt.net-next.4.1.0.nupkg.sha512",
+        "bcrypt.net-next.nuspec",
+        "ico.png",
+        "lib/net10.0/BCrypt.Net-Next.dll",
+        "lib/net10.0/BCrypt.Net-Next.xml",
+        "lib/net20/BCrypt.Net-Next.dll",
+        "lib/net20/BCrypt.Net-Next.xml",
+        "lib/net35/BCrypt.Net-Next.dll",
+        "lib/net35/BCrypt.Net-Next.xml",
+        "lib/net462/BCrypt.Net-Next.dll",
+        "lib/net462/BCrypt.Net-Next.xml",
+        "lib/net472/BCrypt.Net-Next.dll",
+        "lib/net472/BCrypt.Net-Next.xml",
+        "lib/net48/BCrypt.Net-Next.dll",
+        "lib/net48/BCrypt.Net-Next.xml",
+        "lib/netstandard2.0/BCrypt.Net-Next.dll",
+        "lib/netstandard2.0/BCrypt.Net-Next.xml",
+        "lib/netstandard2.1/BCrypt.Net-Next.dll",
+        "lib/netstandard2.1/BCrypt.Net-Next.xml",
+        "readme.md"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
@@ -2811,6 +2854,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "BCrypt.Net-Next >= 4.1.0",
       "DataAccessLayer-BankManagementSystem >= 1.0.0"
     ]
   },
@@ -2820,11 +2864,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\BusinessLayer-BankManagementSystem.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\Full Stack project\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\BusinessLayer-BankManagementSystem.csproj",
       "projectName": "BusinessLayer-BankManagementSystem",
-      "projectPath": "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\BusinessLayer-BankManagementSystem.csproj",
+      "projectPath": "C:\\Users\\user\\Desktop\\Full Stack project\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\BusinessLayer-BankManagementSystem.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\obj\\",
+      "outputPath": "C:\\Users\\user\\Desktop\\Full Stack project\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2842,8 +2886,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj": {
-              "projectPath": "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj"
+            "C:\\Users\\user\\Desktop\\Full Stack project\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj": {
+              "projectPath": "C:\\Users\\user\\Desktop\\Full Stack project\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj"
             }
           }
         }
@@ -2862,6 +2906,12 @@
     "frameworks": {
       "net8.0": {
         "targetAlias": "net8.0",
+        "dependencies": {
+          "BCrypt.Net-Next": {
+            "target": "Package",
+            "version": "[4.1.0, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -2878,7 +2928,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.413/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.420/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

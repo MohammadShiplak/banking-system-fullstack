@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj": {}
+    "C:\\Users\\user\\Desktop\\Full Stack project\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj": {
+    "C:\\Users\\user\\Desktop\\Full Stack project\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\Full Stack project\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj",
         "projectName": "DataAccessLayer-BankManagementSystem",
-        "projectPath": "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj",
+        "projectPath": "C:\\Users\\user\\Desktop\\Full Stack project\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\DataAccessLayer-BankManagementSystem.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\obj\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\Full Stack project\\banking-system-fullstack\\DataAccessLayer-BankManagementSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -46,6 +46,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.8, )"
@@ -83,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.413/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.420/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

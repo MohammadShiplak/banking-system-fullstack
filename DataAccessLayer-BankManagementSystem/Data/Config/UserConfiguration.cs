@@ -22,41 +22,95 @@ namespace DataAccessLayer_BankManagementSystem.Data.Config
                   .IsRequired()
                   .HasMaxLength(100);
 
-            builder.Property(c => c.Password)
-                  .IsRequired()
-                  .HasMaxLength(150);
+
 
             builder.Property(c => c.Email)
                 .IsRequired()
                   .HasMaxLength(150);
 
+            builder.Property(c => c.PasswordHash)
+                  .IsRequired()
+                  .HasMaxLength(255);
+
+            builder.Property(c => c.Role)
+                  .IsRequired()
+                  .HasMaxLength(50)
+                  .HasDefaultValue("User");
+
             // Default value for AccountBalance
-          
+
+
+
+            builder.Property(c => c.RefreshToken)
+                .IsRequired(false)
+                .HasMaxLength(255);
+
+
+            builder.Property(c => c.RefreshTokenHash)
+                .IsRequired(false)
+                .HasMaxLength(255);
+
+
+            builder.Property(c => c.RefreshTokenExpiresAt)
+              .IsRequired(false)
+              .HasMaxLength(255);
+
+
+            builder.Property(c => c.RefreshTokenRevokedAt)
+              .IsRequired(false)
+              .HasMaxLength(255);   
+
+
+
+
+
 
             builder.ToTable("Users");
 
             builder.HasData(LoadUsers());
-     
-          
+
+
 
 
         }
 
         private static List<User> LoadUsers()
         {
+            // BCrypt hash of "Password123" for all seed users
+            // You can generate new hashes using: BCrypt.Net.BCrypt.HashPassword("Password123")
+            var hashedPassword = "$2a$11$h8pAqCpqQKjF1GK9QKKvR.e7iZPmNkRdFLLNz7FGC0l7KTSZFvxrq";
+
             return new List<User>
-    {
-        new User { Id = 1, UserName = "john_doe", Password = "pass123", Email = "john@example.com" },
-        new User { Id = 2, UserName = "jane_smith", Password = "jane456", Email = "jane@example.com" },
-        new User { Id = 3, UserName = "mike_jones", Password = "mike789", Email = "mike@example.com" },
-        new User { Id = 4, UserName = "sara_wilson", Password = "sara012", Email = "sara@example.com" },
-        new User { Id = 5, UserName = "david_brown", Password = "david345", Email = "david@example.com" },
-        new User { Id = 6, UserName = "emily_davis", Password = "emily678", Email = "emily@example.com" },
-        new User { Id = 7, UserName = "robert_taylor", Password = "robert901", Email = "robert@example.com" },
-        new User { Id = 8, UserName = "lisa_miller", Password = "lisa234", Email = "lisa@example.com" },
-        new User { Id = 9, UserName = "thomas_wilson", Password = "thomas567", Email = "thomas@example.com" },
-        new User { Id = 10, UserName = "amy_jackson", Password = "amy890", Email = "amy@example.com" }
-    };
+            {
+                new User { Id = 1, UserName = "Mohammad_Shiplak", Email = "Mohammadshiplak@gmail.com", PasswordHash = hashedPassword, Role = "Admin", // ✅ Explicitly set to null
+            // New seeded users have no refresh token yet
+            // They will get one when they first login
+            RefreshToken= null,
+            RefreshTokenHash      = null,
+            RefreshTokenExpiresAt = null,
+            RefreshTokenRevokedAt = null, },// full access
+                new User { Id = 2, UserName = "jane_smith"  , Email = "jane@example.com", PasswordHash = hashedPassword, Role = "Teller",// ✅ Explicitly set to null
+            // New seeded users have no refresh token yet
+            // They will get one when they first login
+            RefreshToken= null,
+            RefreshTokenHash      = null,
+            RefreshTokenExpiresAt = null,
+            RefreshTokenRevokedAt = null, },//can help clients but can not delete or manager users
+                new User { Id = 3, UserName = "mike_jones", Email = "mike@example.com", PasswordHash = hashedPassword, Role = "Client",// ✅ Explicitly set to null
+            // New seeded users have no refresh token yet
+            // They will get one when they first login
+            RefreshToken= null,
+            RefreshTokenHash      = null,
+            RefreshTokenExpiresAt = null,
+            RefreshTokenRevokedAt = null, },//Only can see and manage their own account
+                new User {Id = 4, UserName = "sara_wilson", Email = "sara@example.com", PasswordHash = hashedPassword, Role = "Client",RefreshToken= null, RefreshTokenHash = null, RefreshTokenExpiresAt = null, RefreshTokenRevokedAt = null},
+                new User {Id = 5, UserName = "david_brown", Email = "david@example.com", PasswordHash = hashedPassword, Role = "Client",RefreshToken= null, RefreshTokenHash = null, RefreshTokenExpiresAt = null, RefreshTokenRevokedAt = null},
+                new User {Id = 6, UserName = "emily_davis", Email = "emily@example.com", PasswordHash = hashedPassword, Role = "Teller",RefreshToken= null, RefreshTokenHash = null, RefreshTokenExpiresAt = null, RefreshTokenRevokedAt = null},
+                new User {Id = 7, UserName = "robert_taylor", Email = "robert@example.com", PasswordHash = hashedPassword, Role = "Client",RefreshToken= null, RefreshTokenHash = null, RefreshTokenExpiresAt = null, RefreshTokenRevokedAt = null},
+                new User {Id = 8, UserName = "lisa_miller", Email = "lisa@example.com", PasswordHash = hashedPassword, Role = "Client",RefreshToken= null, RefreshTokenHash = null, RefreshTokenExpiresAt = null, RefreshTokenRevokedAt = null},
+                new User {Id = 9, UserName = "thomas_wilson", Email = "thomas@example.com", PasswordHash = hashedPassword, Role = "Client",RefreshToken= null, RefreshTokenHash = null, RefreshTokenExpiresAt = null, RefreshTokenRevokedAt = null},
+                new User {Id = 10, UserName = "amy_jackson", Email = "amy@example.com", PasswordHash = hashedPassword, Role = "Client",RefreshToken= null, RefreshTokenHash = null, RefreshTokenExpiresAt = null, RefreshTokenRevokedAt = null}
+            };
         }
 
     }

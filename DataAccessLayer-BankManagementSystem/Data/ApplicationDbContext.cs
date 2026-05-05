@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer_BankManagementSystem.DTO;
+using DataAccessLayer_BankManagementSystem.DTO.Auth;
 using DataAccessLayer_BankManagementSystem.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -28,9 +29,7 @@ namespace DataAccessLayer_BankManagementSystem.Data
             base.OnModelCreating(modelBuilder);
 
 
-            modelBuilder.Entity<ClientCountResult>().HasNoKey();
-            modelBuilder.Entity<TransferRequest>().HasNoKey();
-            modelBuilder.Entity<LoginRequest>().HasNoKey();
+      
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
 
         }

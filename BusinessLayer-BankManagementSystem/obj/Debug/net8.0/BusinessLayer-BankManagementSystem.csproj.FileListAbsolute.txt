@@ -14,3 +14,35 @@ C:\Users\user\Desktop\Bank Project\banking-system-fullstack\BusinessLayer-BankMa
 C:\Users\user\Desktop\Bank Project\banking-system-fullstack\BusinessLayer-BankManagementSystem\obj\Debug\net8.0\refint\BusinessLayer-BankManagementSystem.dll
 C:\Users\user\Desktop\Bank Project\banking-system-fullstack\BusinessLayer-BankManagementSystem\obj\Debug\net8.0\BusinessLayer-BankManagementSystem.pdb
 C:\Users\user\Desktop\Bank Project\banking-system-fullstack\BusinessLayer-BankManagementSystem\obj\Debug\net8.0\ref\BusinessLayer-BankManagementSystem.dll
+C:\Users\user\Desktop\My bank system\banking-system-fullstack\BusinessLayer-BankManagementSystem\bin\Debug\net8.0\BusinessLayer-BankManagementSystem.deps.json
+C:\Users\user\Desktop\My bank system\banking-system-fullstack\BusinessLayer-BankManagementSystem\bin\Debug\net8.0\BusinessLayer-BankManagementSystem.dll
+C:\Users\user\Desktop\My bank system\banking-system-fullstack\BusinessLayer-BankManagementSystem\bin\Debug\net8.0\BusinessLayer-BankManagementSystem.pdb
+C:\Users\user\Desktop\My bank system\banking-system-fullstack\BusinessLayer-BankManagementSystem\bin\Debug\net8.0\DataAccessLayer-BankManagementSystem.dll
+C:\Users\user\Desktop\My bank system\banking-system-fullstack\BusinessLayer-BankManagementSystem\bin\Debug\net8.0\DataAccessLayer-BankManagementSystem.pdb
+C:\Users\user\Desktop\My bank system\banking-system-fullstack\BusinessLayer-BankManagementSystem\obj\Debug\net8.0\BusinessLayer-BankManagementSystem.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\My bank system\banking-system-fullstack\BusinessLayer-BankManagementSystem\obj\Debug\net8.0\BusinessLayer-BankManagementSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\My bank system\banking-system-fullstack\BusinessLayer-BankManagementSystem\obj\Debug\net8.0\BusinessLayer-BankManagementSystem.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\My bank system\banking-system-fullstack\BusinessLayer-BankManagementSystem\obj\Debug\net8.0\BusinessLayer-BankManagementSystem.AssemblyInfo.cs
+C:\Users\user\Desktop\My bank system\banking-system-fullstack\BusinessLayer-BankManagementSystem\obj\Debug\net8.0\BusinessLayer-BankManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\My bank system\banking-system-fullstack\BusinessLayer-BankManagementSystem\obj\Debug\net8.0\BusinessLayer-BankManagementSystem.sourcelink.json
+C:\Users\user\Desktop\My bank system\banking-system-fullstack\BusinessLayer-BankManagementSystem\obj\Debug\net8.0\Business.7BB65B79.Up2Date
+C:\Users\user\Desktop\My bank system\banking-system-fullstack\BusinessLayer-BankManagementSystem\obj\Debug\net8.0\BusinessLayer-BankManagementSystem.dll
+C:\Users\user\Desktop\My bank system\banking-system-fullstack\BusinessLayer-BankManagementSystem\obj\Debug\net8.0\refint\BusinessLayer-BankManagementSystem.dll
+C:\Users\user\Desktop\My bank system\banking-system-fullstack\BusinessLayer-BankManagementSystem\obj\Debug\net8.0\BusinessLayer-BankManagementSystem.pdb
+C:\Users\user\Desktop\My bank system\banking-system-fullstack\BusinessLayer-BankManagementSystem\obj\Debug\net8.0\ref\BusinessLayer-BankManagementSystem.dll
+C:\Users\user\Desktop\Full Stack project\banking-system-fullstack\BusinessLayer-BankManagementSystem\bin\Debug\net8.0\BusinessLayer-BankManagementSystem.deps.json
+C:\Users\user\Desktop\Full Stack project\banking-system-fullstack\BusinessLayer-BankManagementSystem\bin\Debug\net8.0\BusinessLayer-BankManagementSystem.dll
+C:\Users\user\Desktop\Full Stack project\banking-system-fullstack\BusinessLayer-BankManagementSystem\bin\Debug\net8.0\BusinessLayer-BankManagementSystem.pdb
+C:\Users\user\Desktop\Full Stack project\banking-system-fullstack\BusinessLayer-BankManagementSystem\bin\Debug\net8.0\DataAccessLayer-BankManagementSystem.dll
+C:\Users\user\Desktop\Full Stack project\banking-system-fullstack\BusinessLayer-BankManagementSystem\bin\Debug\net8.0\DataAccessLayer-BankManagementSystem.pdb
+C:\Users\user\Desktop\Full Stack project\banking-system-fullstack\BusinessLayer-BankManagementSystem\obj\Debug\net8.0\BusinessLayer-BankManagementSystem.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\Full Stack project\banking-system-fullstack\BusinessLayer-BankManagementSystem\obj\Debug\net8.0\BusinessLayer-BankManagementSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\Full Stack project\banking-system-fullstack\BusinessLayer-BankManagementSystem\obj\Debug\net8.0\BusinessLayer-BankManagementSystem.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\Full Stack project\banking-system-fullstack\BusinessLayer-BankManagementSystem\obj\Debug\net8.0\BusinessLayer-BankManagementSystem.AssemblyInfo.cs
+C:\Users\user\Desktop\Full Stack project\banking-system-fullstack\BusinessLayer-BankManagementSystem\obj\Debug\net8.0\BusinessLayer-BankManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Full Stack project\banking-system-fullstack\BusinessLayer-BankManagementSystem\obj\Debug\net8.0\BusinessLayer-BankManagementSystem.sourcelink.json
+C:\Users\user\Desktop\Full Stack project\banking-system-fullstack\BusinessLayer-BankManagementSystem\obj\Debug\net8.0\Business.7BB65B79.Up2Date
+C:\Users\user\Desktop\Full Stack project\banking-system-fullstack\BusinessLayer-BankManagementSystem\obj\Debug\net8.0\BusinessLayer-BankManagementSystem.dll
+C:\Users\user\Desktop\Full Stack project\banking-system-fullstack\BusinessLayer-BankManagementSystem\obj\Debug\net8.0\refint\BusinessLayer-BankManagementSystem.dll
+C:\Users\user\Desktop\Full Stack project\banking-system-fullstack\BusinessLayer-BankManagementSystem\obj\Debug\net8.0\BusinessLayer-BankManagementSystem.pdb
+C:\Users\user\Desktop\Full Stack project\banking-system-fullstack\BusinessLayer-BankManagementSystem\obj\Debug\net8.0\ref\BusinessLayer-BankManagementSystem.dll

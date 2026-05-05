@@ -49,7 +49,34 @@ namespace BusinessLayer_BankManagementSystem.Services
 
         public Task<User> FindUsersbyUserNameAndPasswordAsync(string username, string hashedPassword)
         {
-            return _Context.Users.FirstOrDefaultAsync(u => u.UserName == username && u.Password == hashedPassword);
+            return _Context.Users.FirstOrDefaultAsync(u => u.Email == username && u.PasswordHash == hashedPassword);
+        }
+
+        public Task<User> GetUserByEmailAsync(string email)
+        {
+            return _Context.Users.FirstOrDefaultAsync(u => u.Email == email);
+        }
+
+        public Task<User> GetUserByRefreshTokenAsync(string email)
+        {
+           return _Context.Users.FirstOrDefaultAsync(u => u.Email== email);    
+        }
+
+        public Task SaveRefreshTokenAsync(User user, string refreshTokenHash, DateTime expiresAt)
+        {
+            // store the HASH of the refresh token, not the raw token itself
+            user.RefreshTokenHash = refreshTokenHash;
+            user.RefreshTokenExpiresAt = expiresAt;
+            user.RefreshTokenRevokedAt = null; // reset revoked time when issuing new token
+
+          ;
+            return _Context.SaveChangesAsync(); 
+        }
+
+        public async Task RevokeRefreshTokenAsync(User user)
+        {
+            user.RefreshTokenRevokedAt = DateTime.UtcNow;
+            await _Context.SaveChangesAsync();  
         }
     }
 }

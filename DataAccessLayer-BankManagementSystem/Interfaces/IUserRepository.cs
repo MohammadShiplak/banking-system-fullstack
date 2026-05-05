@@ -19,5 +19,17 @@ namespace DataAccessLayer_BankManagementSystem.Interfaces
         Task  DeleteUserAsync(T entity);
 
         Task<User> FindUsersbyUserNameAndPasswordAsync(string username, string hashedPassword);
+        Task<User> GetUserByEmailAsync(string email);
+
+        // ── NEW: needed for refresh token logic ───────
+        // Find user by email AND check their refresh token
+        Task<User> GetUserByRefreshTokenAsync(string email);
+
+        //Save refresh token details to the database
+        
+        Task SaveRefreshTokenAsync(User user,string refreshTokenHash,DateTime expiresAt);
+
+        Task RevokeRefreshTokenAsync(User user);    
+
     }
 }

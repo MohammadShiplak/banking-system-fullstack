@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "X4hyYUOrr6k=",
+  "dgSpecHash": "lSktZCCj6mg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\Bank Project\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\BusinessLayer-BankManagementSystem.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\Full Stack project\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\BusinessLayer-BankManagementSystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\bcrypt.net-next\\4.1.0\\bcrypt.net-next.4.1.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.6\\microsoft.data.sqlclient.5.1.6.nupkg.sha512",
