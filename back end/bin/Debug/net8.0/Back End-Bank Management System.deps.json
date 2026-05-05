@@ -1085,6 +1085,7 @@
       },
       "BusinessLayer-BankManagementSystem/1.0.0": {
         "dependencies": {
+          "BCrypt.Net-Next": "4.1.0",
           "DataAccessLayer-BankManagementSystem": "1.0.0"
         },
         "runtime": {
@@ -1096,6 +1097,7 @@
       },
       "DataAccessLayer-BankManagementSystem/1.0.0": {
         "dependencies": {
+          "BCrypt.Net-Next": "4.1.0",
           "Microsoft.EntityFrameworkCore": "9.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.8"
         },

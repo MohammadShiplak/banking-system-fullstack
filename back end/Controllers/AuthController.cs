@@ -12,6 +12,8 @@ using System.Text;
 using System.Security.Cryptography;
 using Back_End_Bank_Management_System.Auth;
 using Azure.Core;
+using Microsoft.AspNetCore.RateLimiting;
+using DataAccessLayer_BankManagementSystem.DTO;
 
 namespace Back_End_Bank_Management_System.Controllers
 {
@@ -46,6 +48,8 @@ namespace Back_End_Bank_Management_System.Controllers
 
      
         [HttpPost("login")]
+
+        [EnableRateLimiting("AuthLimiter")]
         [AllowAnonymous]
         public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
@@ -173,12 +177,46 @@ namespace Back_End_Bank_Management_System.Controllers
         }
 
 
+        [HttpPost("register")]
+        public async Task<IActionResult> register(RegisterDTO userDTO)
+        {
+            // Validate
+            if (string.IsNullOrEmpty(userDTO.Password))
+                return BadRequest("Password is required");
+
+            // Build User with hashed password
+            var newUser = new User
+            {
+                UserName = userDTO.UserName,
+                Email = userDTO.Email,
+                Role = "Teller",
+                PasswordHash = BCrypt.Net.BCrypt.HashPassword(userDTO.Password)
+            };
+
+            // ✅ Save newUser — NOT userDTO
+            var savedUser = await _userRepository.AddUsersAsync(newUser);
+
+            // ✅ Return safe response — never return password
+            return Ok(new
+            {
+                savedUser.Id,
+                savedUser.UserName,
+                savedUser.Email,
+                savedUser.Role
+            });
+        }
+        [HttpPost("logout")]
+        public async  Task<IActionResult> Logout([FromBody] LogoutRequest request)
+        {
+            var user =  await _userRepository.GetUserByRefreshTokenAsync(request.Email);
+
+            if (user == null)
+                return Ok(); // Do not reveal if user exists
 
 
-
-
-
-
+            await _userRepository.RevokeRefreshTokenAsync(user);
+            return Ok("Logged out successfully");
+        }
 
 
     }

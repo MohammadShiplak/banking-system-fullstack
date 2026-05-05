@@ -9,13 +9,14 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Back_End_Bank_Management_System.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
-    [Authorize(Roles = "Admin")]
+    [AllowAnonymous]
     // The ENTIRE users controller is Admin only
     // Tellers and Clients cannot manage system users
     public class UserController : ControllerBase
@@ -73,16 +74,8 @@ namespace Back_End_Bank_Management_System.Controllers
             return Ok(updateduser);
 
         }
-        [HttpPost]
-        public async Task <IActionResult> Add(User user)
-        {
-
-            var users = await _userRepository.AddUsersAsync(user);
-
-            return Ok(users);
-        }
-
      
+
         [HttpGet("GetUserCounts")]
         public async Task <IActionResult>GetUserCounts()
         {

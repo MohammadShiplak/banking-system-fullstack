@@ -163,7 +163,7 @@ namespace Back_End_Bank_Management_System.Controllers
 
 
         [HttpGet("{Id}")]
-       // [Authorize(Roles = "Admin,Teller,Client")]
+        [Authorize(Roles = "Admin,Teller,Client")]
         public async Task <IActionResult> Get(int Id, [FromServices] IAuthorizationService authorizationService)
         {
             var client = await _clientRepository.GetByClientsinfoByIdAsync(Id);

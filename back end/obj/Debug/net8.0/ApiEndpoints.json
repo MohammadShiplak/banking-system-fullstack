@@ -17,6 +17,22 @@
   },
   {
     "ContainingType": "Back_End_Bank_Management_System.Controllers.AuthController",
+    "Method": "Logout",
+    "RelativePath": "api/Auth/logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Back_End_Bank_Management_System.Auth.LogoutRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Back_End_Bank_Management_System.Controllers.AuthController",
     "Method": "Refresh",
     "RelativePath": "api/Auth/refresh",
     "HttpMethod": "POST",
@@ -26,6 +42,22 @@
       {
         "Name": "request",
         "Type": "Back_End_Bank_Management_System.Auth.RefreshRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Back_End_Bank_Management_System.Controllers.AuthController",
+    "Method": "register",
+    "RelativePath": "api/Auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userDTO",
+        "Type": "DataAccessLayer_BankManagementSystem.DTO.RegisterDTO",
         "IsRequired": true
       }
     ],
@@ -224,22 +256,6 @@
     "Method": "Update",
     "RelativePath": "api/User",
     "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "user",
-        "Type": "DataAccessLayer_BankManagementSystem.Entities.User",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Back_End_Bank_Management_System.Controllers.UserController",
-    "Method": "Add",
-    "RelativePath": "api/User",
-    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [

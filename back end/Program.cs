@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
-
+using System.Threading.RateLimiting;
 var builder = WebApplication.CreateBuilder(args);
 
 // ─── 1. JWT Authentication ────────────────────────────────────
@@ -100,7 +100,57 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// ─── 5. Rate limiting Service ──────────────────────────────────────────────
+
+
+builder.Services.AddRateLimiter(options =>
+{
+
+    options.RejectionStatusCode=StatusCodes.Status429TooManyRequests;
+
+    options.AddPolicy("AuthLimiter", HttpContent =>
+    {
+
+var ip =HttpContent.Connection.RemoteIpAddress?.ToString()??"unknown";
+
+        return RateLimitPartition.GetFixedWindowLimiter(partitionKey: ip, factory: _ => new FixedWindowRateLimiterOptions
+        {
+
+            PermitLimit = 3, // Max 5 requests
+            Window = TimeSpan.FromMinutes(1), // Per 1 minute
+            QueueLimit = 0, // No queuing   
+
+
+
+        });
+
+
+
+    });
+
+
+
+
+
+
+
+
+});
+
+
+
+
 var app = builder.Build();
+
+
+
+
+
+
+
+
+
+
 
 // ─── 6. Middleware Pipeline (ORDER IS CRITICAL!) ──────────────
 if (app.Environment.IsDevelopment())
@@ -108,9 +158,19 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+         // ✅ 1st — before everything else    
 app.UseCors("ReactPolicy");      // ✅ 1st — before everything
-app.UseHttpsRedirection();       // ✅ 2nd
+app.UseHttpsRedirection();
+app.UseRateLimiter();
+app.Use(async (context, next) =>
+{
+    await next();
+
+    if (context.Response.StatusCode == StatusCodes.Status429TooManyRequests)
+    {
+        await context.Response.WriteAsync("Too many login attempts. Please try again later.");
+    }
+});
 app.UseAuthentication();         // ✅ 3rd — validates JWT  ← was missing!
 app.UseAuthorization();          // ✅ 4th — checks permissions
 
