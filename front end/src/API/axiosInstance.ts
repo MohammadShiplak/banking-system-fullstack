@@ -6,6 +6,7 @@ import { navigateTo } from "../utils/navigationHelper"; // ← NEW
 const axiosInstance = axios.create({
   baseURL: "https://localhost:7259",
   headers: { "Content-Type": "application/json" },
+  withCredentials: true,
 });
 
 // Rate limiting// We need to pass the Redux store in so the bouncer can update the brain

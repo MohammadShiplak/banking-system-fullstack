@@ -1,5 +1,12 @@
+import axios from "axios";
 import { User, Counts } from "../types/user";
 import axiosInstance from "./axiosInstance";
+
+const plainAxios = axios.create({
+  baseURL: "https://localhost:7259",
+  headers: { "Content-Type": "application/json" },
+  withCredentials: true,
+});
 
 export const fetchUser = async () => {
   try {
@@ -23,7 +30,7 @@ export const fetchUserCount = async () => {
 
 export const registerApi = async (userData: any) => {
   try {
-    const response = await axiosInstance.post(`/api/Auth/register`, userData);
+    const response = await plainAxios.post(`/api/Auth/register`, userData);
 
     return response.data;
   } catch (error) {
@@ -66,7 +73,7 @@ export const GetUserbyId = async (Id: number) => {
 
 export const Login = async (email: string, password: string) => {
   try {
-    const response = await axiosInstance.post(`/api/Auth/login`, {
+    const response = await plainAxios.post(`/api/Auth/login`, {
       Email: email,
       Password: password,
     });
@@ -78,40 +85,40 @@ export const Login = async (email: string, password: string) => {
   }
 };
 // ── NEW: Refresh Token API ────────────────────────────────────
-// Called automatically when access token expires
-// User never sees this happen
-export const RefreshTokenApi = async (email: string, refreshToken: string) => {
-  // Send email + refresh token to backend
-  // Backend verifies refresh token and returns new tokens
-  //
-
+// Refresh — no longer sends refreshToken in body
+// Browser sends it automatically via cookie
+export const refreshTokenApi = async (email: string) => {
   try {
-    const response = await axiosInstance.post(`/api/Auth/refresh`, {
-      Email: email,
-      RefreshToken: refreshToken,
-    });
+    const response = await plainAxios.post(
+      "/api/Auth/refresh",
+      {}, // empty body
+      {
+        headers: {
+          // Send email so backend can find the user
+          "X-User-Email": email,
+        },
+      },
+    );
 
-    return response.data; // Return new tokens
+    // Returns only { accessToken }
+    return response.data;
   } catch (error) {
-    console.error("Token refresh failed:", error);
+    throw error;
   }
 };
 // ── NEW: Logout API ───────────────────────────────────────────
 // Tells backend to revoke the refresh token in database
 // So even if someone steals the token, it won't work
-export const LogoutApi = async (email: string, refreshToken: string) => {
-  // Send email + refresh token to backend
-  // Backend verifies refresh token and returns new tokens
-  //
-
+export const logoutApi = async (email: string) => {
   try {
-    const response = await axiosInstance.post(`/api/Auth/logout`, {
-      Email: email,
-      RefreshToken: refreshToken,
-    });
-
-    return response.data; // Return new tokens
+    await plainAxios.post(
+      "/api/Auth/logout",
+      {},
+      {
+        headers: { "X-User-Email": email },
+      },
+    );
   } catch (error) {
-    console.error("Logout API failed:", error);
+    console.error("Logout failed:", error);
   }
 };

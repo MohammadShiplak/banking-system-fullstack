@@ -7,8 +7,8 @@ import {
   GetUserbyId,
   Login,
   fetchUserCount,
-  RefreshTokenApi,
-  LogoutApi,
+  refreshTokenApi,
+  logoutApi,
 } from "../API/UserAPI";
 import { User } from "../types/user";
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
@@ -129,7 +129,7 @@ export const RefreshToken = createAsyncThunk(
       if (!refreshToken || !email) {
         return rejectWithValue("No refresh token or email available");
       }
-      const response = await RefreshTokenApi(email, refreshToken);
+      const response = await refreshTokenApi(email);
       return response; // This should contain the new access token (and maybe a new refresh token)
     } catch (error) {
       return rejectWithValue("session expired, please login gain");
@@ -147,7 +147,7 @@ export const Logout = createAsyncThunk(
     const email = state.users.email; // Tell backend to revoke refresh token
 
     if (refreshToken && email) {
-      await LogoutApi(email, refreshToken);
+      await logoutApi(email);
     }
   },
 );
@@ -159,7 +159,8 @@ interface LoginRequest {
 // updated to handle two tokens
 interface LoginResponse {
   accessToken: string;
-  refreshToken: string;
+  email: null;
+  role: null;
 }
 interface UserCounts {
   userCount: number | null;
@@ -169,10 +170,10 @@ interface UserCounts {
 
 interface UserState {
   accessToken: string | null;
-  refreshToken: string | null;
-  role: string | null;
 
-  email: string | null;
+  role: null;
+
+  email: null;
 
   isAuthenticated: boolean;
 
@@ -211,11 +212,11 @@ const savedRole = savedToken ? (decodeToken(savedToken)?.role ?? null) : null;
 const savedEmail = savedToken ? (decodeToken(savedToken)?.email ?? null) : null;
 */
 const initialState: UserState = {
-  accessToken: savedAccessToken,
-  refreshToken: savedRefreshToken,
-  role: savedDecoded?.role ?? null,
-  email: savedDecoded?.email ?? null,
-  isAuthenticated: !!localStorage.getItem("authToken"),
+  accessToken: null,
+
+  role: null,
+  email: null,
+  isAuthenticated: false,
   items: [],
 
   status: "idle",
@@ -236,7 +237,7 @@ const UserSliceReducer = createSlice({
   reducers: {
     logout(state) {
       state.accessToken = null;
-      state.refreshToken = null;
+
       state.email = null;
       state.isAuthenticated = false;
       localStorage.removeItem("accessToken");
@@ -346,33 +347,18 @@ const UserSliceReducer = createSlice({
       .addCase(LoginPage.fulfilled, (state, action) => {
         state.status = "succeeded";
         state.failedAttempts = 0;
-        const { accessToken, refreshToken } = action.payload;
-
-        // Save token to localStorage so it survives page refresh
-
-        localStorage.setItem("accessToken", accessToken);
-        localStorage.setItem("refreshToken", refreshToken);
+        const { accessToken, email, role } = action.payload;
 
         state.accessToken = accessToken;
-        state.refreshToken = refreshToken;
-        // ← NEW: Decode the token to extract the role
-        const decoded = decodeToken(accessToken);
-        // ← NEW: Save role to Redux state
-        // decoded.role will be "Admin", "Teller", or "Client"
-        console.log("🔍 Decoded token:", decoded);
-        state.role = decoded?.role ?? null;
-        // ← NEW: Save email to Redux state
-        state.email = decoded?.email ?? null;
+        state.role = role;
+        state.email = email;
         state.isAuthenticated = true;
       })
       .addCase(RefreshToken.fulfilled, (state, action) => {
-        const { accessToken, refreshToken } = action.payload;
-
-        localStorage.setItem("accessToken", accessToken);
-        localStorage.setItem("refreshToken", refreshToken);
+        const { accessToken } = action.payload;
 
         state.accessToken = accessToken;
-        state.refreshToken = refreshToken;
+        state.isAuthenticated = true;
 
         const decoded = decodeToken(accessToken);
 
@@ -384,21 +370,17 @@ const UserSliceReducer = createSlice({
         // Refresh failed → force full logout
         // This happens when refresh token is also expired (after 7 days)
         state.accessToken = null;
-        state.refreshToken = null;
+
         state.role = null;
         state.email = null;
         state.isAuthenticated = false;
-        localStorage.removeItem("accessToken");
-        localStorage.removeItem("refreshToken");
       })
       .addCase(Logout.fulfilled, (state) => {
         state.accessToken = null;
-        state.refreshToken = null;
+
         state.role = null;
         state.email = null;
         state.isAuthenticated = false;
-        localStorage.removeItem("accessToken");
-        localStorage.removeItem("refreshToken");
       })
       .addCase(fetchUserCounts.pending, (state) => {
         state.status = "pending";
