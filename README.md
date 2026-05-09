@@ -61,41 +61,6 @@ CORS Protection	Restricts unauthorized cross-origin requests
 Rate Limiting	Protects APIs from abuse and excessive requests
 Logging & Auditing	Tracks important actions and system events
 Password Hashing	Stores passwords securely using hashing
-📂 Project Structure
-BankManagementSystem/
-│
-├── Frontend/                 # React Frontend
-│
-├── Backend/
-│   ├── Presentation Layer
-│   ├── Business Layer
-│   └── Data Access Layer
-│
-└── Database/                 # SQL Server Database
-⚙️ Installation & Setup
-🔧 Backend Setup
-1️⃣ Clone the Repository
-git clone <your-repository-url>
-2️⃣ Navigate to Backend
-cd Backend
-3️⃣ Configure Database Connection
-
-Update your appsettings.json:
-
-"ConnectionStrings": {
-  "DefaultConnection": "Your_SQL_Server_Connection_String"
-}
-4️⃣ Apply Migrations
-dotnet ef database update
-5️⃣ Run the API
-dotnet run
-🌐 Frontend Setup
-1️⃣ Navigate to Frontend
-cd Frontend
-2️⃣ Install Dependencies
-npm install
-3️⃣ Run the Application
-npm run dev
 
 ### 📽️ Demo Video
 
