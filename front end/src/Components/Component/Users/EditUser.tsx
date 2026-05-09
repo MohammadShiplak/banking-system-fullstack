@@ -108,17 +108,6 @@ export default function EditUser() {
               />
             </Form.Group>
 
-            <Form.Group className="mb-4" controlId="formPassword">
-              <Form.Label className="bank-form-label">Password</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Enter Password "
-                className="bank-form-input"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </Form.Group>
-
             <div className="d-flex justify-content-center gap-3 mt-4">
               <Button
                 variant="primary"
