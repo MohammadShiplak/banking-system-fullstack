@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>Back_End_Bank_Management_System</RootNamespace>
+    <UserSecretsId>d4fa0b96-7b79-4321-b409-fb07244c7190</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

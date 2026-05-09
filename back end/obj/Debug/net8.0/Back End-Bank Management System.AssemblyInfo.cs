@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("d4fa0b96-7b79-4321-b409-fb07244c7190")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Back End-Bank Management System")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f1bcc1e2cbc4bd600a0a7b0e4325c4fd16f908ef")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e27875c72f8369d60f4db5bf984ed99ecdd4e96b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Back End-Bank Management System")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Back End-Bank Management System")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

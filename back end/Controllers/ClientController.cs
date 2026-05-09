@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace Back_End_Bank_Management_System.Controllers
 {
@@ -19,14 +20,18 @@ namespace Back_End_Bank_Management_System.Controllers
 
     public class ClientController : ControllerBase
     {
-        readonly IClientRepository<Client> _clientRepository;
+       private  readonly IClientRepository<Client> _clientRepository;
 
-        readonly ApplicationDbContext _context;
+       private readonly ApplicationDbContext _context;
 
-        public ClientController(IClientRepository<Client> clientRepository, ApplicationDbContext context)
+        private readonly ILogger<ClientController> _logger;   
+
+
+        public ClientController(IClientRepository<Client> clientRepository, ApplicationDbContext context, ILogger<ClientController> logger)
         {
             _clientRepository = clientRepository;
             _context = context;
+            _logger = logger;   
         }
 
 
@@ -183,14 +188,68 @@ namespace Back_End_Bank_Management_System.Controllers
         [Authorize(Roles ="Admin")]
         public async Task <IActionResult> Delete(int id)
         {
+            // ✅ Capture IP once for tracing (helps investigations later)
+            var ip = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "unknown";
+
+            // ✅ Identify the admin who is performing the action
+            // ClaimTypes.NameIdentifier is what you put in JWT during login.
+            var adminId = User.FindFirstValue(ClaimTypes.NameIdentifier) ?? "unknown";
+
+            // ===============================
+            // Validation: invalid ID
+            // ===============================
+
+            if(id<0)
+            {
+
+              _logger.LogWarning("Admin action blocked (invalid Id). AdminId={AdminId},Action=Delete,TargetId={TargetId},IP={IP}", adminId, id, ip);
+
+
+
+                return BadRequest($"Not accepted ID {id}");
+            }
+
+
+
+
+
 
             var client =await  _context.Clients.FindAsync(id);
 
             if (client == null)
-                return NotFound(); // 404 if product doesn't exist
+            {
+                // ✅ Audit: admin attempted to delete a non-existing student
+                _logger.LogWarning(
+                    "Admin action failed (target not found). AdminId={AdminId}, Action=DeleteStudent, TargetId={TargetId}, IP={IP}",
+                    adminId,
+                    id,
+                    ip
+                );
+
+                return NotFound($"client with ID {id} not found.");
+            }
+
+            // ✅ Why before?
+            // If delete throws or fails later, you still have the audit record of the attempt.
+            _logger.LogInformation(
+      "Admin action started. AdminId={AdminId}, Action=DeleteStudent, TargetId={TargetId}, IP={IP}",
+      adminId,
+      client.Id,
+
+      ip
+  );
 
             // Delete the product
-          await _clientRepository.DeleteClientAsync(client);
+            await _clientRepository.DeleteClientAsync(client);
+
+            _logger.LogInformation(
+       "Admin action succeeded. AdminId={AdminId}, Action=DeleteStudent, TargetId={TargetId}, IP={IP}",
+       adminId,
+       id,
+       ip
+   );
+
+
 
             // Return 200 OK with the deleted product in the response body
             return Ok(client);

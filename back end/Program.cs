@@ -10,9 +10,19 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.RateLimiting;
 var builder = WebApplication.CreateBuilder(args);
+
+var secretKey = builder.Configuration["JWT_SECRET_KEY"];
+
+if (string.IsNullOrWhiteSpace(secretKey))
+{
+    throw new Exception("JWT secret key is not configured.");
+}
+
+
 
 // ─── 1. JWT Authentication ────────────────────────────────────
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -27,7 +37,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidIssuer = "BankAPI",
             ValidAudience = "BankAPIManagementSystem",
             IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes("THIS_IS_A_VERY_SECRET_KEY_123456"))
+                Encoding.UTF8.GetBytes(secretKey))
+
         };
     });
 
@@ -161,6 +172,7 @@ if (app.Environment.IsDevelopment())
          // ✅ 1st — before everything else    
 app.UseCors("ReactPolicy");      // ✅ 1st — before everything
 app.UseHttpsRedirection();
+// 5 rate limiting 
 app.UseRateLimiter();
 app.Use(async (context, next) =>
 {
@@ -173,7 +185,28 @@ app.Use(async (context, next) =>
 });
 app.UseAuthentication();         // ✅ 3rd — validates JWT  ← was missing!
 app.UseAuthorization();          // ✅ 4th — checks permissions
+// logging
+app.Use(async (context, next) =>
+{
+    await next();
 
+
+    if (context.Response.StatusCode == StatusCodes.Status403Forbidden)
+    {
+        var userId = context.User.FindFirstValue(ClaimTypes.NameIdentifier) ?? "anonymous";
+        var ip = context.Connection.RemoteIpAddress?.ToString() ?? "unknown";
+        var path = context.Request.Path.ToString();
+
+
+        // ✅ Centralized security log for authorization abuse
+        app.Logger.LogWarning(
+            "Forbidden access. UserId={UserId}, Path={Path}, IP={IP}",
+            userId,
+            path,
+            ip
+        );
+    }
+});
 app.MapControllers();
 
-app.Run();
+    app.Run();

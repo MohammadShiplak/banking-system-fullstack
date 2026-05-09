@@ -23,17 +23,23 @@ namespace Back_End_Bank_Management_System.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IUserRepository<User> _userRepository;
+        private readonly ILogger<AuthController> _logger;
+        private readonly IConfiguration _configuration;
+
+
 
         private readonly ApplicationDbContext _context;
 
 
 
-        public AuthController(IUserRepository<User>userRepository,ApplicationDbContext context)
+        public AuthController(IUserRepository<User> userRepository, ApplicationDbContext context, ILogger<AuthController> logger, IConfiguration configuration)
         {
 
             _userRepository = userRepository;
 
-            _context = context; 
+            _context = context;
+            _logger = logger;
+            _configuration = configuration;
         }
 
         private static string GenerateRefreshToken()
@@ -46,22 +52,41 @@ namespace Back_End_Bank_Management_System.Controllers
 
 
 
-     
+
         [HttpPost("login")]
 
         [EnableRateLimiting("AuthLimiter")]
         [AllowAnonymous]
         public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
+            var jwtKey = _configuration["JWT_SECRET_KEY"];
+            var ip = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "unknown";
+
             var user = _context.Users.FirstOrDefault(s => s.Email == request.Email);
 
             if (user == null)
+            {
+                _logger.LogWarning(
+                "Failed login attempt (email not found). Email={Email}, IP={IP}",
+                request.Email,
+                ip
+                );
+
                 return Unauthorized("Invalid credentials");
+            }
 
             bool isValidPassword = BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash);
 
-            if (!isValidPassword)
+            if (user == null)
+            {
+                _logger.LogWarning(
+                "Failed login attempt (email not found). Email={Email}, IP={IP}",
+                request.Email,
+                ip
+                );
+
                 return Unauthorized("Invalid credentials");
+            }
 
             var claims = new[]
             {
@@ -69,9 +94,9 @@ namespace Back_End_Bank_Management_System.Controllers
         new Claim(ClaimTypes.Email,          user.Email),
         new Claim(ClaimTypes.Role,           user.Role)
     };
-
+           
             var key = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes("THIS_IS_A_VERY_SECRET_KEY_123456"));
+                Encoding.UTF8.GetBytes(jwtKey!));
 
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
@@ -96,15 +121,40 @@ namespace Back_End_Bank_Management_System.Controllers
 
             _context.SaveChanges();
 
-            // ✅ Verify both fields saved correctly
-            Console.WriteLine($"RefreshToken:     {user.RefreshToken}");
-            Console.WriteLine($"RefreshTokenHash: {user.RefreshTokenHash}");
-            Console.WriteLine($"ExpiresAt:        {user.RefreshTokenExpiresAt}");
+            // ─────────────────────────────────────────
+            // ✅ Store refresh token in HttpOnly Cookie
+            // HttpOnly = JavaScript CANNOT read this
+            // Secure   = HTTPS only
+            // SameSite = Protects against CSRF attacks
+            // ─────────────────────────────────────────
+            Response.Cookies.Append("refreshToken", rawRefreshToken, new CookieOptions
+            {
 
-            return Ok(new TokenResponse
+                HttpOnly = true,//JS can not access this
+                Secure = true,// HTTP only
+                SameSite = SameSiteMode.Strict,//CSRF as token expiry
+                Expires = DateTime.UtcNow.AddDays(7),// same as token expiry
+                Path = "/api/Auth"// only sent to auth endpoints
+            });
+
+
+
+            _logger.LogInformation("Successful login, userId={userId}, Email={Email},IP={IP}",
+                user.Id,
+                user.Email,
+                ip);
+
+
+
+            // only return accessToken in response body
+            // refresh token is in cookie not Json
+
+            return Ok(new
             {
                 AccessToken = accessToken,
-                RefreshToken = rawRefreshToken  // ← send RAW to frontend
+                email = user.Email,
+                role = user.Role,
+
             });
         }
 
@@ -112,17 +162,68 @@ namespace Back_End_Bank_Management_System.Controllers
         [HttpPost("refresh")]
         public IActionResult Refresh([FromBody] RefreshRequest request)
         {
+
+            var jwtKey = _configuration["JWT_SECRET_KEY"];
+            var ip = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "unknown";
+
+
+
+
+
+            // ✅ Read refresh token FROM COOKIE — not from request body
+            // Browser sends it automatically with every request
+
+            var refreshToken = Request.Cookies["refreshToken"];
+
+            // ✅ Read email from the EXPIRED access token
+            // We still need to find the use
+            var email = Request.Headers["X-User-Email"].ToString();
+
+
+
             var user = _context.Users.FirstOrDefault(u => u.Email == request.Email);
 
             if (user == null)
-                return BadRequest("Invalid refresh request");
+            {
+                _logger.LogWarning(
+                    "Invalid refresh attempt (email not found). Email={Email}, IP={IP}",
+                    request.Email,
+                    ip
+                );
+
+                return Unauthorized("Invalid refresh request");
+            }
+
 
             if (user.RefreshTokenRevokedAt != null)
+            {
+                _logger.LogWarning(
+                            "Refresh attempt using revoked token. UserId={UserId}, Email={Email}, IP={IP}",
+                            user.Id,
+                            user.Email,
+                            ip
+                        );
+
+
+
                 return Unauthorized("Refresh token was revoked, please login again");
+            }
+                
 
             if (user.RefreshTokenExpiresAt == null ||
                 user.RefreshTokenExpiresAt <= DateTime.UtcNow)
+            {
+                _logger.LogWarning(
+           "Invalid refresh token attempt. UserId={UserId}, Email={Email}, IP={IP}",
+           user.Id,
+           user.Email,
+           ip
+       );
+
+
                 return Unauthorized("Refresh token expired, please login again");
+            }
+              
 
             // ✅ FIX: check if RefreshTokenHash is null BEFORE calling BCrypt
             // If null → user logged in with old code → force them to login again
@@ -147,7 +248,7 @@ namespace Back_End_Bank_Management_System.Controllers
     };
 
             var key = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes("THIS_IS_A_VERY_SECRET_KEY_123456"));
+                Encoding.UTF8.GetBytes(jwtKey));
 
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
@@ -169,11 +270,18 @@ namespace Back_End_Bank_Management_System.Controllers
 
             _context.SaveChanges();
 
-            return Ok(new TokenResponse
+            // ✅ Set new refresh token in HttpOnly cookie
+            Response.Cookies.Append("refreshToken", newRefreshToken, new CookieOptions
             {
-                AccessToken = newAccessToken,
-                RefreshToken = newRefreshToken
+                HttpOnly = true,
+                Secure = true,
+                SameSite = SameSiteMode.Strict,
+                Expires = DateTime.UtcNow.AddDays(7),
+                Path = "/api/Auth"
             });
+
+            // ✅ Return only new access token
+            return Ok(new { accessToken = newAccessToken });
         }
 
 
@@ -206,18 +314,40 @@ namespace Back_End_Bank_Management_System.Controllers
             });
         }
         [HttpPost("logout")]
-        public async  Task<IActionResult> Logout([FromBody] LogoutRequest request)
+        public async Task<IActionResult> Logout([FromBody] LogoutRequest request)
         {
-            var user =  await _userRepository.GetUserByRefreshTokenAsync(request.Email);
 
-            if (user == null)
-                return Ok(); // Do not reveal if user exists
+            // Read from cookie
+
+            var refreshToken = Request.Cookies["refreshToken"];
+            var email = Request.Headers["X-User-Email"].ToString();
+
+            if (!string.IsNullOrEmpty(refreshToken) && !string.IsNullOrEmpty(email))
+            {
+                var user = await _userRepository.GetUserByRefreshTokenAsync(request.Email);
+
+                if (user != null)
+                {
+                    await _userRepository.RevokeRefreshTokenAsync(user);
+                    await _context.SaveChangesAsync();
 
 
-            await _userRepository.RevokeRefreshTokenAsync(user);
+
+                }
+            }
+            Response.Cookies.Delete("refreshToken", new CookieOptions
+            {
+
+
+                HttpOnly = true,
+                Secure = true,
+                SameSite = SameSiteMode.Strict,
+                Path = "/api/Auth"
+
+
+
+            });
             return Ok("Logged out successfully");
         }
-
-
     }
 }
