@@ -1,66 +1,228 @@
-🏦 Bank Management System
+# 🏦 Bank Management System
 
-A modern full-stack Bank Management System built with React.js and ASP.NET Core Web API that allows users to perform secure banking operations such as deposits, withdrawals, transfers, and transaction tracking.
+A modern **full-stack Bank Management System** built with **React.js** and **ASP.NET Core Web API** that allows users to perform secure banking operations such as deposits, withdrawals, transfers, and transaction tracking.
 
-The system follows clean architecture principles and includes advanced security features such as Authentication & Authorization, Ownership Policies, HTTPS Encryption, Rate Limiting, and Logging & Auditing.
+The system follows clean architecture principles and includes advanced security features such as:
 
-🚀 Features
-🔐 Authentication & Security
-Secure Login System
-JWT Authentication
-Role-Based Authorization
-Ownership Policies (Users can only access their own resources)
-HTTPS Encryption
-CORS Protection
-Rate Limiting
-Logging & Auditing System
-Secure Password Hashing
-💳 Banking Operations
-Deposit Money
-Withdraw Money
-Transfer Funds Between Accounts
-View Transaction History
-Real-Time Balance Updates
-👥 Management Dashboard
-User Management
-Client Management
-CRUD Operations
-Responsive Admin Dashboard
-🎨 Frontend Features
-Fully Responsive UI
-Modern User Experience
-State Management with Redux Toolkit
-Protected Routes
-API Integration with Axios
-🧰 Tech Stack
-🌐 Frontend
-React.js
-TypeScript
-Redux Toolkit
-React Router
-Axios
-React Bootstrap
-🖥️ Backend
-C#
-ASP.NET Core Web API
-Entity Framework Core
-SQL Server
-Repository Pattern
-3-Tier Architecture
-Architecture Layers
-Presentation Layer
-Business Layer
-Data Access Layer
-🛡️ Security Features
-Feature	Description
-Authentication	Secure JWT-based authentication
-Authorization	Role-based access control
-Ownership Policies	Prevents unauthorized access to other users' data
-HTTPS	Encrypts communication between client and server
-CORS Protection	Restricts unauthorized cross-origin requests
-Rate Limiting	Protects APIs from abuse and excessive requests
-Logging & Auditing	Tracks important actions and system events
-Password Hashing	Stores passwords securely using hashing
+- Authentication & Authorization
+- Ownership Policies
+- HTTPS Encryption
+- Rate Limiting
+- Logging & Auditing
+
+---
+
+# 🚀 Features
+
+## 🔐 Authentication & Security
+
+- Secure Login System
+- JWT Authentication
+- Role-Based Authorization
+- Ownership Policies (Users can only access their own resources)
+- HTTPS Encryption
+- CORS Protection
+- Rate Limiting
+- Logging & Auditing System
+- Secure Password Hashing
+
+---
+
+## 💳 Banking Operations
+
+- Deposit Money
+- Withdraw Money
+- Transfer Funds Between Accounts
+- View Transaction History
+- Real-Time Balance Updates
+
+---
+
+## 👥 Management Dashboard
+
+- User Management
+- Client Management
+- CRUD Operations
+- Responsive Admin Dashboard
+
+---
+
+## 🎨 Frontend Features
+
+- Fully Responsive UI
+- Modern User Experience
+- State Management with Redux Toolkit
+- Protected Routes
+- API Integration with Axios
+
+---
+
+# 🧰 Tech Stack
+
+## 🌐 Frontend
+
+- React.js
+- TypeScript
+- Redux Toolkit
+- React Router
+- Axios
+- React Bootstrap
+
+---
+
+## 🖥️ Backend
+
+- C#
+- ASP.NET Core Web API
+- Entity Framework Core
+- SQL Server
+- Repository Pattern
+- 3-Tier Architecture
+
+### Architecture Layers
+
+- Presentation Layer
+- Business Layer
+- Data Access Layer
+
+---
+
+# 🛡️ Security Features
+
+| Feature | Description |
+|----------|-------------|
+| Authentication | Secure JWT-based authentication |
+| Authorization | Role-based access control |
+| Ownership Policies | Prevents unauthorized access to other users' data |
+| HTTPS | Encrypts communication between client and server |
+| CORS Protection | Restricts unauthorized cross-origin requests |
+| Rate Limiting | Protects APIs from abuse and excessive requests |
+| Logging & Auditing | Tracks important actions and system events |
+| Password Hashing | Stores passwords securely using hashing |
+
+---
+
+# 📂 Project Structure
+
+```bash
+BankManagementSystem/
+│
+├── Frontend/                 # React Frontend
+│
+├── Backend/
+│   ├── Presentation Layer
+│   ├── Business Layer
+│   └── Data Access Layer
+│
+└── Database/                 # SQL Server Database
+```
+
+---
+
+# ⚙️ Installation & Setup
+
+## 🔧 Backend Setup
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone <your-repository-url>
+```
+
+### 2️⃣ Navigate to Backend
+
+```bash
+cd Backend
+```
+
+### 3️⃣ Configure Database Connection
+
+Update your `appsettings.json` file:
+
+```json
+"ConnectionStrings": {
+  "DefaultConnection": "Your_SQL_Server_Connection_String"
+}
+```
+
+### 4️⃣ Apply Migrations
+
+```bash
+dotnet ef database update
+```
+
+### 5️⃣ Run the API
+
+```bash
+dotnet run
+```
+
+---
+
+## 🌐 Frontend Setup
+
+### 1️⃣ Navigate to Frontend
+
+```bash
+cd Frontend
+```
+
+### 2️⃣ Install Dependencies
+
+```bash
+npm install
+```
+
+### 3️⃣ Run the Application
+
+```bash
+npm run dev
+```
+
+---
+
+
+
+
+---
+
+# 📚 What I Learned
+
+Through this project, I improved my skills in:
+
+- Full-Stack Development
+- ASP.NET Core Web API
+- React.js & Redux Toolkit
+- Database Design
+- RESTful APIs
+- Authentication & Authorization
+- Secure Application Development
+- Clean Architecture
+- Repository Pattern
+- Logging & Auditing
+- API Security Best Practices
+
+---
+
+# 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome.
+
+Feel free to fork the project and submit a pull request.
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+# 👨‍💻 Author
+
+**Mohammad Khaled Shiplak**
+
+Full-Stack Developer passionate about building secure and scalable web applications.
 
 ### 📽️ Demo Video
 
