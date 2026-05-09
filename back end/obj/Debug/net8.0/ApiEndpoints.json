@@ -49,7 +49,7 @@
   },
   {
     "ContainingType": "Back_End_Bank_Management_System.Controllers.AuthController",
-    "Method": "register",
+    "Method": "Register",
     "RelativePath": "api/Auth/register",
     "HttpMethod": "POST",
     "IsController": true,

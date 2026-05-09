@@ -279,8 +279,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T11:59:37.447Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-05T11:59:37.447Z"
             },
             {
               "$type": "Document",
@@ -304,8 +303,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-05T13:21:31.015Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-05T13:21:31.015Z"
             },
             {
               "$type": "Document",
@@ -315,7 +313,7 @@
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\user\\Desktop\\Full Stack project\\banking-system-fullstack\\back end\\Controllers\\AuthController.cs*",
               "RelativeToolTip": "Controllers\\AuthController.cs*",
-              "ViewState": "AgIAAB8BAAAAAAAAAAAUwPMAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAAwDUBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-24T00:00:03.815Z",
               "EditorCaption": ""

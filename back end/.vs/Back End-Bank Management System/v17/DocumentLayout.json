@@ -3,6 +3,9 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\Full Stack project\\banking-system-fullstack\\back end\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\UserRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|c:\\users\\user\\desktop\\full stack project\\banking-system-fullstack\\back end\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -21,9 +24,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|c:\\users\\user\\desktop\\full stack project\\banking-system-fullstack\\back end\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\UserRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3C91EE0D-C28F-4EFF-BAC2-600092258F88}|Back End-Bank Management System.csproj|c:\\users\\user\\desktop\\full stack project\\banking-system-fullstack\\back end\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -243,7 +243,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -271,7 +271,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Full Stack project\\banking-system-fullstack\\back end\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -279,8 +279,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T11:59:37.447Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-05T11:59:37.447Z"
             },
             {
               "$type": "Document",
@@ -296,7 +295,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Full Stack project\\banking-system-fullstack\\back end\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -304,25 +303,24 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-05T13:21:31.015Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-05T13:21:31.015Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Full Stack project\\banking-system-fullstack\\back end\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\user\\Desktop\\Full Stack project\\banking-system-fullstack\\back end\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAAB8BAAAAAAAAAAAUwPMAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAIUAAAAAAAAAAAAQwDUBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-24T00:00:03.815Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Full Stack project\\banking-system-fullstack\\back end\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
@@ -334,15 +332,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\My bank system\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\UserRepository.cs",
               "ToolTip": "C:\\Users\\user\\Desktop\\My bank system\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\UserRepository.cs",
               "RelativeToolTip": "..\\..\\..\\My bank system\\banking-system-fullstack\\BusinessLayer-BankManagementSystem\\Interfaces\\Repositories\\UserRepository.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAswEQAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAFIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-28T22:27:16.808Z"
+              "WhenOpened": "2026-04-28T22:27:16.808Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -382,7 +381,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ClientController.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Full Stack project\\banking-system-fullstack\\back end\\Controllers\\ClientController.cs",
               "RelativeDocumentMoniker": "Controllers\\ClientController.cs",
